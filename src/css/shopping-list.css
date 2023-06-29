@@ -1,0 +1,31 @@
+.shopping-list{
+
+}
+.shopping-list-header{
+padding-top: 40px;
+padding-left: 20px;
+
+color: #111;
+font-size: 32px;
+font-family: DM Sans;
+font-style: normal;
+font-weight: 700;
+line-height: 0.8421052%;
+letter-spacing: -1.28px;
+}
+.shopping-list-second-header{
+    color: #4F2EE8;
+}
+
+.shopping-list-books{
+    padding-top: 40px;
+    display: flex;
+    gap: 20px;
+}
+.shopping-list-pagination{
+    padding-bottom: 20px;
+}
+.shopping-list-books-item{
+    width: 335px;
+    height: 170px;
+}
