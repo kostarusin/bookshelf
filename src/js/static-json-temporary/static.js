@@ -1,1 +1,0 @@
-const stat = 1;
