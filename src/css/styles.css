@@ -8,7 +8,50 @@
 @import './modal-mobile-menu.css';
 @import './modal-book-selection.css';
 @import './buttons-temporary.css';
+@import './loader.css';
+@import './color_thema.css';
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --container-width: 100%;
+}
 
 body {
   font-family: 'DM Sans', sans-serif;
+}
+
+.container {
+  width: var(--container-width);
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+}
+
+@media (min-width: 375px) {
+  :root {
+    --container-width: 375px;
+  }
+
+  @media (min-width: 768px) {
+    :root {
+      --container-width: 768px;
+    }
+    .container {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --container-width: 1440px;
+  }
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
