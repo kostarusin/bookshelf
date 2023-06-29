@@ -16,3 +16,8 @@ clip-path: inset(100%);
 clip: rect(0 0 0 0);
 overflow: hidden;
 }
+
+.list-categories .link:hover,
+.list-categories .link:focus {
+    color: #4F2EE8;
+}
