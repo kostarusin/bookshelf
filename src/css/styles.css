@@ -18,6 +18,7 @@
 :root {
   --container-width: 100%;
   --background-color: #f6f6f6;
+  --header-background-color: #ffffff;
   --font-color-dark: #111111;
   --font-color-selected: #4f2ee8;
   --author-category-booklist-font-color: #b4afaf;
