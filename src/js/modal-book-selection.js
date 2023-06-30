@@ -1,10 +1,18 @@
 const modalContainerEl = document.querySelector('.modal-book-container');
 
 
-
 export function renderModalBook(infoModalBook) {
   const modalHtml = generateModalHtml(infoModalBook);
   modalContainerEl.innerHTML = modalHtml;
+
+   // Get all the book card elements
+  const bookCards = document.querySelectorAll('.book-card');
+
+  // Add click event listener to each book card
+  bookCards.forEach((bookCard) => {
+    const bookId = bookCard.dataset.bookId;
+    bookCard.addEventListener('click', () => openModal(bookId));
+  });
 
   // Получаем ссылку на модальное окно и его содержимое
   const modal = document.getElementById("modal");
@@ -71,6 +79,20 @@ function generateMarketplaceLinks(buyLinks) {
     .join('');
 }
 
+function openModal(bookId) {
+  // Get the book object based on the bookId (assuming you have an array of books)
+  const book = books.find((book) => book._id === bookId);
+
+  // Render the modal with the book data
+  const modalHtml = generateModalHtml(book);
+  modalContainerEl.innerHTML = modalHtml;
+
+  // Show the modal
+  const modal = document.getElementById('modal');
+  modal.style.display = 'block';
+
+  
+}
 
 const book = {
   "_id": "642fd89ac8cf5ee957f12361",
