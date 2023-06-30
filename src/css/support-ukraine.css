@@ -32,7 +32,7 @@ overflow: hidden;
     flex-direction: column;
     gap: 20px; 
 }
-li:before {
+.list::before {
     content: '0'counter(item);
     counter-increment: item;
     margin-right: 16px;
