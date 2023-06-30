@@ -1,7 +1,11 @@
+ul {
+    list-style: none;
+}
+
 .container-categories {
-width: 335px;
+/* width: 335px; */
 height: 228px;
-margin-top: 20px;
+margin-top: 40px;
 }
 
 .visually-hidden {
@@ -17,7 +21,22 @@ clip: rect(0 0 0 0);
 overflow: hidden;
 }
 
-.list-categories .link:hover,
-.list-categories .link:focus {
+.list-categories a:hover,
+.list-categories a:focus {
     color: #4F2EE8;
+    font-weight: 600; /*700 */
+    text-transform: uppercase;
+}
+
+.list-categories a {
+    text-decoration: none;
+    color: #11111199;
+    font-size: 13px;
+    line-height: 18px;
+    /* letter-spacing: 0.2px; */
+}
+.list-categories {
+    display: flex;
+    gap: 20px;  /*24px */
+    flex-direction: column;
 }
