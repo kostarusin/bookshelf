@@ -3,6 +3,7 @@ import './js/loader';
 import './js/render';
 import './js/services';
 import './js/storage';
+import './js/test';
 import './js/scroll-up';
 
 
@@ -83,6 +84,7 @@ let down=document.querySelector('.down-scroll').addEventListener('click',functio
   }
   divEl.style.top=-offset+'px'
 })
+
 
 
 

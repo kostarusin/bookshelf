@@ -8,6 +8,9 @@
 @import './modal-mobile-menu.css';
 @import './modal-book-selection.css';
 @import './buttons-temporary.css';
+
+@import './test.css';
+
 @import './loader.css';
 @import './color_thema.css';
 @import './scroll-up.css';
@@ -76,6 +79,7 @@ img {
     #fff 100%
   );
 }
+
 
 body {
   font-family: 'DM Sans', sans-serif;
