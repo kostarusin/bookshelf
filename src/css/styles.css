@@ -17,6 +17,7 @@
 
 :root {
   --container-width: 100%;
+  --background-color: #f6f6f6;
 }
 
 body {
