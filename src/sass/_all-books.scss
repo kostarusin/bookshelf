@@ -1,56 +1,4 @@
-// START RESET STYLES ================================
-* {
-  box-sizing: border-box;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin: 0;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-a {
-  color: currentColor;
-  text-decoration: none;
-}
-
-button {
-  font-family: inherit;
-  cursor: pointer;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-body {
-  margin: 0;
-}
-
-input,
-textarea {
-  outline: none;
-}
-
-iframe {
-  border: none;
-}
-// END RESET STYLES =============================
-
 // Mobile =======================================
-//
 .all-books-wrapper {
   margin: 0 auto;
   padding-block: 40px 80px;
@@ -61,7 +9,7 @@ iframe {
 }
 
 .all-books-title {
-  color: #111;
+  color: var(--font-color-dark);
   font-size: 32px;
   font-weight: 700;
   line-height: 1.19;
@@ -85,7 +33,7 @@ iframe {
 }
 
 .category-title {
-  color: #b4afaf;
+  color: var(--author-category-booklist-font-color);
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
@@ -121,7 +69,7 @@ iframe {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #111;
+  color: var(--font-color-dark);
   font-size: 14px;
   font-weight: 500;
   line-height: 18px;
@@ -143,12 +91,12 @@ iframe {
   font-weight: 700;
   line-height: 1.12;
   letter-spacing: -0.64px;
-  color: #111;
+  color: var(--font-color-dark);
 }
 
 .book-author {
   margin-top: 4px;
-  color: #b4afaf;
+  color: var(--author-category-booklist-font-color);
   font-size: 12px;
   font-family: DM Sans;
   font-style: italic;
@@ -158,11 +106,17 @@ iframe {
 }
 
 .see-more__button {
+  color: var(--font-color-dark);
   margin-left: auto;
   margin-top: 8px;
   padding: 14px 28px;
   border-radius: 40px;
   border: 2px solid #4f2ee8;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.28;
+  letter-spacing: -0.14px;
+  text-transform: uppercase;
   background-color: transparent;
 }
 
@@ -178,7 +132,7 @@ iframe {
   }
 
   .all-books-title {
-    color: #111;
+    color: var(--font-color-dark);
     font-size: 48px;
     font-weight: 700;
     line-height: 1.1;
