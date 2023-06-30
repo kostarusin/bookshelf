@@ -8,8 +8,112 @@
 @import './modal-mobile-menu.css';
 @import './modal-book-selection.css';
 @import './buttons-temporary.css';
+
 @import './test.css';
+
+@import './loader.css';
+@import './color_thema.css';
+@import './scroll-up.css';
+
+
+/* Reset styles */
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+  font-style: normal;
+}
+
+button {
+  cursor: pointer;
+}
+
+address {
+  font-style: normal;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+:root {
+  --container-width: 100%;
+  --background-color: #f6f6f6;
+  --header-background-color: #ffffff;
+  --font-color-dark: #111111;
+  --font-color-selected: #4f2ee8;
+  --author-category-booklist-font-color: #b4afaf;
+  --support-ukraine-font-color: #ffffff;
+  --categories-font-color: rgba(17, 17, 17, 0.6);
+  --header-border-color: #111111;
+  --shopping-list-book-card-border-color: rgba(79, 46, 232, 0.4);
+  --categories-scroll-color: #e0e0e0;
+  --support-ukraine-modal-menu-background: radial-gradient(
+    189.32% 190.93% at 59.76% -23.42%,
+    #4f2ee8 18.03%,
+    #fff 100%
+  );
+}
+
 
 body {
   font-family: 'DM Sans', sans-serif;
+}
+
+.container {
+  width: var(--container-width);
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+}
+
+@media (min-width: 375px) {
+  :root {
+    --container-width: 375px;
+  }
+
+  @media (min-width: 768px) {
+    :root {
+      --container-width: 768px;
+    }
+    .container {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  :root {
+    --container-width: 1440px;
+  }
+  .container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
