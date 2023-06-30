@@ -1,0 +1,258 @@
+// START RESET STYLES ================================
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  margin: 0;
+}
+
+input,
+textarea {
+  outline: none;
+}
+
+iframe {
+  border: none;
+}
+// END RESET STYLES =============================
+
+// Mobile =======================================
+//
+.all-books-wrapper {
+  margin: 0 auto;
+  padding-block: 40px 80px;
+  padding-inline: 20px;
+  width: 375px;
+  display: flex;
+  flex-direction: column;
+}
+
+.all-books-title {
+  color: #111;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.19;
+  letter-spacing: -1.28px;
+}
+
+.all-books-title-accent {
+  color: #4f2ee8;
+}
+
+.all-book-list {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.category-title {
+  color: #b4afaf;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.42px;
+  text-transform: uppercase;
+}
+
+.category-book-list {
+  margin-top: 18px;
+}
+
+.category-book-item:not(:first-child) {
+  display: none;
+}
+
+.book-image-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.book-image {
+  width: 335px;
+  height: 485px;
+}
+
+.book-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.56px;
+  text-transform: uppercase;
+  border-radius: 0px 0px 8px 8px;
+  background: #eac645;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.category-book-item:is(:hover, :focus) .book-overlay {
+  transform: translateY(0);
+}
+
+.book-title {
+  margin-top: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.64px;
+  color: #111;
+}
+
+.book-author {
+  margin-top: 4px;
+  color: #b4afaf;
+  font-size: 12px;
+  font-family: DM Sans;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: -0.48px;
+}
+
+.see-more__button {
+  margin-left: auto;
+  margin-top: 8px;
+  padding: 14px 28px;
+  border-radius: 40px;
+  border: 2px solid #4f2ee8;
+  background-color: transparent;
+}
+
+// Tablet =======================================
+@media screen and (min-width: 768px) {
+  .all-books-wrapper {
+    width: 768px;
+    margin: 0 auto;
+    padding-block: 100px;
+    padding-inline: 32px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .all-books-title {
+    color: #111;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -1.92px;
+  }
+
+  .all-book-list {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .category-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .category-title {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: 0.42px;
+    text-transform: uppercase;
+  }
+
+  .category-book-list {
+    margin-top: 18px;
+    display: flex;
+    gap: 25px;
+  }
+
+  .category-book-item {
+    max-width: 218px;
+  }
+
+  .category-book-item:nth-child(-n + 3) {
+    display: block;
+  }
+
+  .book-image {
+    width: 218px;
+    height: 316px;
+  }
+
+  .see-more__button {
+    margin-left: auto;
+    margin-top: 20px;
+  }
+}
+
+// Desktop =======================================
+@media screen and (min-width: 1440px) {
+  .all-books-wrapper {
+    width: 996px;
+    margin: 0 auto;
+    padding-block: 72px 40px;
+    padding-inline: 0;
+  }
+
+  .category-book-list {
+    gap: 24px;
+  }
+
+  .category-book-item {
+    width: 180px;
+  }
+
+  .category-book-item:nth-child(-n + 5) {
+    display: block;
+  }
+
+  .book-image {
+    width: 180px;
+    height: 256px;
+  }
+}
