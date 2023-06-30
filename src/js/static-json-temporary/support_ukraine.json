@@ -1,10 +1,4 @@
-import './js/refs';
-import './js/loader';
-import './js/render';
-import './js/services';
-import './js/storage';
-import './js/theme';
-let array = [
+[
   {
     title: 'Save the Children',
     url:
@@ -52,33 +46,3 @@ let array = [
     img: null,
   },
 ]
-const bodyEl=document.body;
-const divEl =document.createElement('div');
-const headerEl=document.createElement('h2');
-headerEl.className='header_support';
-divEl.insertAdjacentElement('afterbegin',headerEl);
-headerEl.textContent='Support Ukraine';
-headerEl.svg=''
-const ulEl=document.createElement('ol');
-
-ulEl.className='ul_support';
-divEl.className='container_support';
-let list = array.map(item => {
-  let listItem = document.createElement('li');
-  listItem.className = 'list';
-  listItem.innerHTML = `
-    <a class="support_link" href="${item.url}">${item.title}
-      <img class="image" src="#" alt="#"/>
-    </a>
-  `;
-  
-  return listItem;
-});
-list.forEach(item=>{
-ulEl.appendChild(item)
-});
-divEl.appendChild(ulEl);
-bodyEl.appendChild(divEl);
-// array.forEach(item=>{
-//   window.open (`${item.url}`,`${item.title}`, "popup");
-// })
