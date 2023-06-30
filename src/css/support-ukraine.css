@@ -2,7 +2,7 @@
     width: 335px;
     height:352px;
     border-radius: 16px;
-    background:var(--support-ukraine-modal-menu-background)
+    background:radial-gradient( #4F2EE8 100%, #FFFFFF 100%)
     ;
 }
 .ul_support{
