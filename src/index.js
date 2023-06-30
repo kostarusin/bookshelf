@@ -59,6 +59,7 @@ divEl.insertAdjacentElement('afterbegin',headerEl);
 headerEl.textContent='Support Ukraine';
 headerEl.svg=''
 const ulEl=document.createElement('ol');
+
 ulEl.className='ul_support';
 divEl.className='container_support';
 let list = array.map(item => {
@@ -77,6 +78,6 @@ ulEl.appendChild(item)
 });
 divEl.appendChild(ulEl);
 bodyEl.appendChild(divEl);
-array.forEach(item=>{
-  window.open ('https://www.savethechildren.net/what-we-do/emergencies/ukraine-crisis',`${item.title}`, "popup");
-})
+// array.forEach(item=>{
+//   window.open (`${item.url}`,`${item.title}`, "popup");
+// })
