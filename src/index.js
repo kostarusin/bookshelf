@@ -3,6 +3,9 @@ import './js/loader';
 import './js/render';
 import './js/services';
 import './js/storage';
+import './js/scroll-up';
+
+
 let array = [
   {
     title: 'Save the Children',

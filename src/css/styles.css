@@ -10,6 +10,8 @@
 @import './buttons-temporary.css';
 @import './loader.css';
 @import './color_thema.css';
+@import './scroll-up.css';
+
 
 /* Reset styles */
 * {
