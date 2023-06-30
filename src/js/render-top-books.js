@@ -1,7 +1,10 @@
 const allBooksTitleEl = document.querySelector('.all-books-title');
 const allBooksListEl = document.querySelector('.all-book-list');
 
+// ============================================================================
 allBooksListEl.addEventListener('click', e => {
+  e.preventDefault();
+
   if (e.target.tagName === 'BUTTON') {
     const category = e.target.closest('.category-item').dataset.category;
 
@@ -11,10 +14,14 @@ allBooksListEl.addEventListener('click', e => {
   }
 
   const bookItem = e.target.closest('.category-book-item');
-  console.dir(
-    `bookItem clicked... open modal with book details ${bookItem.dataset.bookId}`
-  );
+
+  if (bookItem) {
+    console.dir(
+      `bookItem clicked... open modal with book details ${bookItem.dataset.bookId}`
+    );
+  }
 });
+// ============================================================================
 
 export function renderTopBooks(topBookList) {
   allBooksTitleEl.innerHTML =

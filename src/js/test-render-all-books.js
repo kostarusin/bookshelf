@@ -10,7 +10,6 @@ const bookApi = new BookApi();
 bookApi
   .getTopBook()
   .then(topBooks => {
-    console.log(topBooks);
     renderTopBooks(topBooks);
   })
   .catch(error => {
