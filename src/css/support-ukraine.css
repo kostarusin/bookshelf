@@ -2,8 +2,7 @@
     width: 335px;
     height:352px;
     border-radius: 16px;
-    background:radial-gradient( #4F2EE8 100%, #FFFFFF 100%)
-    ;
+    background:var( --support-ukraine-modal-menu-background);
 }
 .ul_support{
     list-style-type:decimal-leading-zero;
