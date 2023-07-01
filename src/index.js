@@ -5,3 +5,4 @@ import './js/services';
 import './js/storage';
 import './js/support_ukraine';
 import './js/scroll-up';
+import './js/categories';
