@@ -4,7 +4,6 @@ import './js/render';
 import './js/services';
 import './js/storage';
 import './js/theme';
-import './js/test';
 import './js/scroll-up';
 
 let array = [
