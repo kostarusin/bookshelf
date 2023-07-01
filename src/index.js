@@ -4,6 +4,9 @@ import './js/render';
 import './js/services';
 import './js/storage';
 import './js/theme';
+import './js/test';
+import './js/scroll-up';
+
 let array = [
   {
     title: 'Save the Children',
@@ -52,18 +55,11 @@ let array = [
     img: null,
   },
 ]
-const bodyEl=document.body;
-const divEl =document.createElement('div');
-const headerEl=document.createElement('h2');
-headerEl.className='header_support';
-divEl.insertAdjacentElement('afterbegin',headerEl);
-headerEl.textContent='Support Ukraine';
-headerEl.svg=''
-const ulEl=document.createElement('ol');
+const divEl =document.querySelector('.slider_line');
+const olEl=document.querySelector('.ol_support');
 
-ulEl.className='ul_support';
-divEl.className='container_support';
-let list = array.map(item => {
+function markUpSupportUkraine(){
+  let list = array.map(item => {
   let listItem = document.createElement('li');
   listItem.className = 'list';
   listItem.innerHTML = `
@@ -71,14 +67,27 @@ let list = array.map(item => {
       <img class="image" src="#" alt="#"/>
     </a>
   `;
-  
   return listItem;
 });
+
 list.forEach(item=>{
-ulEl.appendChild(item)
+olEl.appendChild(item)
 });
+
 divEl.appendChild(ulEl);
 bodyEl.appendChild(divEl);
 // array.forEach(item=>{
 //   window.open (`${item.url}`,`${item.title}`, "popup");
 // })
+
+};
+markUpSupportUkraine();
+let offset=0;
+let down=document.querySelector('.down-scroll').addEventListener('click',function(){
+  offset+= 100;
+  if(offset>352){
+    offset=0;
+  }
+  divEl.style.top=-offset+'px'
+})
+
