@@ -4,3 +4,6 @@ import './js/render';
 import './js/services';
 import './js/storage';
 import './js/categories';
+import './js/support_ukraine';
+import './js/test';
+import './js/scroll-up';
