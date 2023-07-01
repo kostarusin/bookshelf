@@ -1,0 +1,12 @@
+.sec {
+    background-color: var(--font-color-selected);
+}
+
+.a {
+    color: var(--logo-text-color);
+}
+
+.switcher {
+    background-color: var(--font-color-dark);
+    color: var( --logo-text-color);
+}
