@@ -1,0 +1,19 @@
+.scroll-top {
+   display: none;
+   position: fixed;
+   bottom: 20px;
+   right: 20px;
+   width: 40px;
+   height: 40px;
+   background-color: #111111;
+   color: #FFFFFF;
+   text-align: center;
+   line-height: 40px;
+   font-size: 20px;
+   border-radius: 50%;
+   z-index: 9999;
+}
+
+.scroll-top.show {
+   display: block;
+}

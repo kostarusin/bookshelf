@@ -10,6 +10,7 @@
 @import './buttons-temporary.css';
 @import './loader.css';
 @import './color_thema.css';
+@import './scroll-up.css';
 
 /* Reset styles */
 * {
@@ -56,18 +57,25 @@ img {
   height: auto;
 }
 
+/* colors fot thema switch
+
+--background-color: #f6f6f6;
+--header-background-color: #ffffff;
+--font-color-dark: #111111;
+--font-color-selected: #4f2ee8;
+--categories-font-color: rgba(17, 17, 17, 0.6);
+--header-border-color: #111111;
+--categories-scroll-color: #e0e0e0; */
+
 :root {
   --container-width: 100%;
   --background-color: #f6f6f6;
   --header-background-color: #ffffff;
-  --font-color-dark: #111111;
+  /* --font-color-dark: #111111; */
   --font-color-selected: #4f2ee8;
   --author-category-booklist-font-color: #b4afaf;
   --support-ukraine-font-color: #ffffff;
-  --categories-font-color: rgba(17, 17, 17, 0.6);
-  --header-border-color: #111111;
   --shopping-list-book-card-border-color: rgba(79, 46, 232, 0.4);
-  --categories-scroll-color: #e0e0e0;
   --support-ukraine-modal-menu-background: radial-gradient(
     189.32% 190.93% at 59.76% -23.42%,
     #4f2ee8 18.03%,
