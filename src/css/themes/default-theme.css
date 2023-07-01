@@ -1,0 +1,11 @@
+:root {
+    --background-color: #f6f6f6;
+    --header-background-color: #ffffff;
+    --logo-text-color: #F3F3F3;
+    --font-color-dark: #111111;
+    --header-border-color: #111111;
+    --font-color-selected: #4f2ee8;
+    --categories-font-color: rgba(17, 17, 17, 0.6);
+    --pop-up-bg-color: #ffffff;
+    --categories-scroll-color: #e0e0e0;
+}
