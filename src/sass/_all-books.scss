@@ -1,3 +1,61 @@
+// swiper =======================================
+.swiper {
+  width: 335px;
+}
+
+.swiper-btn-prev,
+.swiper-btn-next {
+  top: 45%;
+  width: 50px;
+  height: 50px;
+  margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  cursor: pointer;
+  color: #000000;
+  background-color: #ffffffbe;
+  border-radius: 50%;
+}
+
+.swiper-btn-prev::after,
+.swiper-btn-next::after {
+  font-family: swiper-icons;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 0;
+  font-variant: initial;
+  line-height: 1;
+  text-transform: none !important;
+}
+
+.swiper-btn-prev {
+  left: var(--swiper-navigation-sides-offset, 10px);
+  right: auto;
+
+  &::after {
+    content: 'prev';
+  }
+}
+
+.swiper-btn-next {
+  right: var(--swiper-navigation-sides-offset, 10px);
+  left: auto;
+
+  &::after {
+    content: 'next';
+  }
+}
+
+.swiper-btn-next.swiper-button-disabled,
+.swiper-btn-prev.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: auto;
+  pointer-events: none;
+}
+
 // Mobile =======================================
 .all-books-wrapper {
   margin: 0 auto;
@@ -32,6 +90,11 @@
   flex-direction: column;
 }
 
+.see-more-wrapper {
+  width: 100%;
+  display: flex;
+}
+
 .category-title {
   color: var(--author-category-booklist-font-color);
   font-size: 14px;
@@ -43,10 +106,6 @@
 
 .category-book-list {
   margin-top: 18px;
-}
-
-.category-book-item:not(:first-child) {
-  display: none;
 }
 
 .book-link:focus {
@@ -145,6 +204,15 @@
 
 // Tablet =======================================
 @media screen and (min-width: 768px) {
+  .swiper {
+    width: 702px;
+  }
+
+  .swiper-btn-prev,
+  .swiper-btn-next {
+    top: 40%;
+  }
+
   .all-books-wrapper {
     width: 768px;
     margin: 0 auto;
@@ -185,15 +253,11 @@
   .category-book-list {
     margin-top: 18px;
     display: flex;
-    gap: 25px;
+    // gap: 25px;
   }
 
   .category-book-item {
     max-width: 218px;
-  }
-
-  .category-book-item:nth-child(-n + 3) {
-    display: block;
   }
 
   .book-image {
@@ -209,6 +273,10 @@
 
 // Desktop =======================================
 @media screen and (min-width: 1440px) {
+  .swiper {
+    width: 996px;
+  }
+
   .all-books-wrapper {
     width: 996px;
     margin: 0 auto;
@@ -217,15 +285,10 @@
   }
 
   .category-book-list {
-    gap: 24px;
   }
 
   .category-book-item {
     width: 180px;
-  }
-
-  .category-book-item:nth-child(-n + 5) {
-    display: block;
   }
 
   .book-image {
