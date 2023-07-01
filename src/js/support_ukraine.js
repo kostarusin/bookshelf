@@ -1,5 +1,5 @@
 
-import support_ukraine from './static-json-temporary/support_ukraine.json';
+//import support_ukraine from './static-json-temporary/support_ukraine.json';
 
   
 
