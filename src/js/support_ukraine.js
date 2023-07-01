@@ -69,7 +69,7 @@ let array = [
   markUpSupportUkraine();
   let offset=0;
   let down=document.querySelector('.down-scroll').addEventListener('click',function(){
-    offset+= 200;
+    offset+= 100;
     if(offset>352){
       offset=0;
     }
