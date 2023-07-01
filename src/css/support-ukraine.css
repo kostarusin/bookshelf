@@ -3,7 +3,7 @@
         189.32% 190.93% at 59.76% -23.42%,
         #4f2ee8 18.03%,
         #fff 100%);
-        width: 335px;
+     width: 335px;
     height:352px;
     border-radius: 16px;
 }
@@ -27,7 +27,6 @@ overflow: hidden;
     font-size:14px;
     line-height:1.28;
     letter-spacing:-4%;
-    margin-top: 40px;
     display: flex;
     flex-direction: column;
     gap: 20px; 
@@ -45,8 +44,10 @@ line-height:1.14;
 letter-spacing:-4%;
 padding-left: 40px;
 padding-top: 24px;
+margin-bottom: 40px;
 color:rgba(255, 255, 255, 1)
 }
+
 .down-scroll{
 position: fixed;
 padding-left: 152px;
