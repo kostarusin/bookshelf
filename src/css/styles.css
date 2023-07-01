@@ -8,9 +8,6 @@
 @import './modal-mobile-menu.css';
 @import './modal-book-selection.css';
 @import './buttons-temporary.css';
-
-@import './test.css';
-
 @import './loader.css';
 @import './color_thema.css';
 @import './scroll-up.css';
@@ -72,6 +69,10 @@ img {
 
 :root {
   --container-width: 100%;
+  --background-color: #f6f6f6;
+  --header-background-color: #ffffff;
+  /* --font-color-dark: #111111; */
+  --font-color-selected: #4f2ee8;
   --author-category-booklist-font-color: #b4afaf;
   --support-ukraine-font-color: #ffffff;
   --shopping-list-book-card-border-color: rgba(79, 46, 232, 0.4);
