@@ -89,4 +89,6 @@ let down=document.querySelector('.down-scroll').addEventListener('click',functio
   }
   divEl.style.top=-offset+'px'
 })
-
+import './js/support_ukraine';
+import './js/test';
+import './js/scroll-up';
