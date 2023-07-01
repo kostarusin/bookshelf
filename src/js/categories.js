@@ -19,6 +19,7 @@ for (const category of categories) {
 }
 
 listCategoriesEl.addEventListener('click', event => {
+  event.preventDefault();
   if (event.target.nodeName === 'A') {
     const textCategory = event.target.textContent;
     //console.log(textCategory);
@@ -31,7 +32,3 @@ const toUpperCase = function (textCategory) {
   const normalizedToUpperCase = textCategory.toUpperCase();
   console.log(normalizedToUpperCase);
 };
-
-// for (const topBook of top_books) {
-
-// }
