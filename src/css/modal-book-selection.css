@@ -26,13 +26,17 @@
    width: 24px;
    height: 24px;
    position: absolute;
-   right: 12px;
-   top: 12px;
-   color: #111111;
-   float: right;
-   font-size: 28px;
-   font-weight: bold;
+   right: 24px;
+   top: 24px; 
+  
    cursor: pointer;
+   stroke: #111111;
+}
+@media screen and (min-width: 768px) {
+   .close {
+      width: 28px;
+      height: 28px;
+   }
 }
 
 .modal-book-selection {
@@ -232,13 +236,13 @@
    align-items: center;
    gap: 20px;
    width: 287px;
-   /* height: 36px;; */
+   height: 36px;
    flex-wrap: wrap;
    
 }
-
-.modale-book-trading-platform {
+.modal-book-trading-platform{
    height: 36px;
+   
 }
 
 .modal-book-shopping-list-btn {
