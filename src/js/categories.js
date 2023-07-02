@@ -1,5 +1,6 @@
 import BookApi from './services.js';
 import { renderTopBooks } from './render-top-books.js';
+import { receiveBookByCategory } from './category.js';
 const bookApi = new BookApi();
 const categories = bookApi.getCategories();
 
@@ -40,8 +41,9 @@ listCategoriesEl.addEventListener('click', event => {
     event.target.classList.add('active-category');
     activeCategoryEl = event.target;
 
-    // bookApi.getBooksByCategory(textCategory).then(categories => {
-    //   renderTopBooks(categories);
-    // });
+    bookApi.getBooksByCategory(textCategory).then(categories => {
+      receiveBookByCategory(categories);
+      // renderTopBooks(categories);
+    });
   }
 });
