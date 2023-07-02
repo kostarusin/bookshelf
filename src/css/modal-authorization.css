@@ -33,9 +33,9 @@
     cursor: pointer;
     left: 89%;
     top: 3%;
-    stroke: #111;
-    fill: #111;
-    color: #111;
+    stroke: var(--header-background-color);
+    fill: var(--header-background-color);
+    color: var(--header-background-color);
 }
 
 .modal-close-icon {
@@ -43,16 +43,16 @@
     height: 20px;
 }
 
-  .backdrop.is-hidden .modal {
+.backdrop.is-hidden .modal {
     transform: translate(-50%, -50%) scale(0);
-}  
+}   
 
- .is-hidden {
+.is-hidden {
     opacity: 0; 
     visibility: hidden;
     pointer-events: none; 
     overflow: hidden;
-}  
+}      
 
 .just-form {
     width: 295px;
