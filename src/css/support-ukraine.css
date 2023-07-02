@@ -10,8 +10,8 @@
 }
 
 .slider_line{
-    top:0;
-    height:188px;
+    top: 0;
+    height:178px;
     position:relative;
     margin: auto 0;
     transition: all ease 1s;
@@ -28,6 +28,7 @@ overflow: hidden;
     font-size:14px;
     line-height:1.28;
     letter-spacing:-4%;
+    margin-top:40px
 }
 .list::before {
     content: '0'counter(item);
@@ -51,7 +52,6 @@ line-height:1.14;
 letter-spacing:-4%;
 padding-left: 40px;
 padding-top: 24px;
-padding-bottom: 40px;
 color:rgba(255, 255, 255, 1)
 }
 
@@ -61,7 +61,12 @@ padding-left: 152px;
 padding-bottom: 20px;
 margin-top: 16px;
 }
+.up-scroll{
+    position: absolute; 
+    padding-left: 152px;
 
+  
+}
 
 
 

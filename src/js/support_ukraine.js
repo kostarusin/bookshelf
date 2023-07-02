@@ -25,10 +25,18 @@ import array from './static-json-temporary/support_ukraine.json';
   let offset=0;
 document.querySelector('.down-scroll').addEventListener('click',()=>{
     offset+= 100;
-    if(offset>=500){
-      offset=0;
+    if(offset>400){
+      offset=400;
     }
     divEl.style.top=-offset+'px'
+  });
+  
+  document.querySelector('.up-scroll').addEventListener('click',()=>{
+    offset+= 100;
+    if(offset=400){
+      offset=400;
+    }
+    divEl.style.top=offset+'px'
   });
   
   
