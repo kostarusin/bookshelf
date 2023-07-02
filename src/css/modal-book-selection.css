@@ -38,6 +38,10 @@
       height: 28px;
    }
 }
+.close:hover,
+.close:focus{
+   stroke: #4F2EE8;   
+}
 
 .modal-book-selection {
    position: absolute;
