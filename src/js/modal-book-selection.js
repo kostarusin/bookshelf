@@ -6,7 +6,7 @@ export function renderModalBook(infoModalBook) {
   modalContainerEl.innerHTML = modalHtml;
 
    // Get all the book card elements
-  const bookCards = document.querySelectorAll('.book-card');
+  const bookCards = document.querySelectorAll('.book-link');
 
   // Add click event listener to each book card
   bookCards.forEach((bookCard) => {
@@ -45,8 +45,8 @@ function generateModalHtml(book) {
   const { book_image, title, author, description, buy_links } = book;
 
   return `
-    <div class="backdrop is-hidden" data-modal>
-      <div id="modal" class="modal-book-selection">
+    <div id="modal" class="backdrop is-hidden" data-modal>
+      <div class="modal-book-selection">
         <div class="modal-book-content">
           <span class="close" data-modal-close>&times;</span>
           <div class="modal-book-content-wrap">
