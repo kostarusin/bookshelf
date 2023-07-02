@@ -28,7 +28,8 @@ overflow: hidden;
     font-size:14px;
     line-height:1.28;
     letter-spacing:-4%;
-    margin-top:40px
+    margin-top:40px;
+  
 }
 .list::before {
     content: '0'counter(item);
