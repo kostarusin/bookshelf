@@ -1,7 +1,9 @@
 // функція яка буде рендерити картку для пошуку за категоріями
+import Notiflix from 'notiflix';
 
 const categoryBookList = document.querySelector('.category-book-list');
 const categoryTitle = document.querySelector('.category-books-title');
+const allBooksWrapper = document.querySelector('.all-books-wrapper');
 
 function createBookCard(books) {
   console.log(books);
@@ -24,14 +26,24 @@ function createBookCard(books) {
 }
 
 function createCategoryTitle(list_name) {
-  return `<h1 class="all-books-title">${list_name}</h1>`;
+  const words = list_name.split(' ');
+  const lastWord = words.pop();
+  const designedTitle =
+    words.join(' ') +
+    ' <span class="all-books-title-accent">' +
+    lastWord +
+    '</span>';
+  return `<h1 class="all-books-title">${designedTitle}</h1>`;
 }
 
 export function receiveBookByCategory(selectedCategory) {
   console.log(selectedCategory);
   if (selectedCategory.length < 1) {
-    alert('no products');
+    Notiflix.Notify.failure(
+      'Unfortunately there are no books under seleceted category'
+    );
   }
+  // allBooksWrapper.style.display = 'none';
 
   categoryTitle.innerHTML = createCategoryTitle(selectedCategory[0].list_name);
   categoryBookList.innerHTML = createBookCard(selectedCategory);

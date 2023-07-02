@@ -1,3 +1,5 @@
+//import categories from '../../categories_list.json';
+//import top_books from '../../top_books.json';
 import BookApi from './services.js';
 import { renderTopBooks } from './render-top-books.js';
 import { receiveBookByCategory } from './category.js';
