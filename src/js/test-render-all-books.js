@@ -20,9 +20,12 @@ const bookApi = new BookApi();
 //   });
 
 
-bookApi.getBooksByCategory('Series Books').then(category => {
-  console.log(category);
-  receiveBookByCategory(category)
-}).catch(err => {
-  console.log(err);
-})
+bookApi
+  .getBooksByCategory('Hardcover Fiction')
+  .then(category => {
+    console.log(category);
+    receiveBookByCategory(category);
+  })
+  .catch(err => {
+    console.log(err);
+  });
