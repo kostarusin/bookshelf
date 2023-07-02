@@ -3,6 +3,7 @@ import './js/loader';
 import './js/render';
 import './js/services';
 import './js/storage';
+import './js/modal-book-selection';
 import './js/theme';
 import './js/scroll-up';
 import './js/support_ukraine';
