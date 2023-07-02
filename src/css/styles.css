@@ -1,5 +1,5 @@
 @import './header';
-@import './categories';
+@import './categories.css';
 @import './support-ukraine';
 @import './all-books';
 @import './books-by-category';
@@ -65,14 +65,14 @@ img {
 --font-color-selected: #4f2ee8;
 --categories-font-color: rgba(17, 17, 17, 0.6);
 --header-border-color: #111111;
---categories-scroll-color: #e0e0e0; */
+--categories-scroll-color: #e0e0e0;
+--background-color: #f6f6f6; 
+--header-background-color: #ffffff; 
+--font-color-dark: #111111; 
+--font-color-selected: #4f2ee8; */
 
 :root {
   --container-width: 100%;
-  --background-color: #f6f6f6;
-  --header-background-color: #ffffff;
-  /* --font-color-dark: #111111; */
-  --font-color-selected: #4f2ee8;
   --author-category-booklist-font-color: #b4afaf;
   --support-ukraine-font-color: #ffffff;
   --shopping-list-book-card-border-color: rgba(79, 46, 232, 0.4);
