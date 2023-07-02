@@ -1,5 +1,4 @@
 :root {
-    --color: #4F2EE8;
     --duration: 1s;
     --width: 10px;
 }
@@ -22,7 +21,7 @@ div {
     top: 50%;
     left: 50%;
     transform: translateY(-50%) translateX(-50%);
-    box-shadow: inset 0px 0px 0px var(--width) rgba(var(--color), 0.3);
+    box-shadow: inset 0px 0px 0px var(--width) rgba(var(--font-color-selected), 0.3);
 
     animation: load-rotate calc(var(--duration) * 4) infinite;
 
@@ -69,7 +68,7 @@ span {
     &:after {
         content: '';
         position: absolute;
-        background: var(--color);
+        background: var(--font-color-selected);
     }
 
     &:before {
