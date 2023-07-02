@@ -1,3 +1,5 @@
+//import categories from '../../categories_list.json';
+//import top_books from '../../top_books.json';
 import BookApi from './services.js';
 import { renderTopBooks } from './render-top-books.js';
 const bookApi = new BookApi();
@@ -31,17 +33,11 @@ listCategoriesEl.addEventListener('click', event => {
 
   if (event.target.nodeName === 'A') {
     const textCategory = event.target.textContent;
-    console.log(textCategory);
-    if (activeCategoryEl === event.target) {
-      return;
-    }
-
-    activeCategoryEl.classList.remove('active-category');
-    event.target.classList.add('active-category');
-    activeCategoryEl = event.target;
-
-    // bookApi.getBooksByCategory(textCategory).then(categories => {
-    //   renderTopBooks(categories);
-    // });
+    //console.log(textCategory);
+    //console.log(event.target);
+    //toUpperCase(textCategory);
+    getBooksByCategory().then(category => {
+      console.log(category);
+    });
   }
 });
