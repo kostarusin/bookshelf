@@ -52,7 +52,8 @@ line-height:1.14;
 letter-spacing:-4%;
 padding-left: 40px;
 padding-top: 24px;
-color:rgba(255, 255, 255, 1)
+color:rgba(255, 255, 255, 1);
+
 }
 
 .down-scroll{
@@ -61,12 +62,7 @@ padding-left: 152px;
 padding-bottom: 20px;
 margin-top: 16px;
 }
-.up-scroll{
-    position: absolute; 
-    padding-left: 152px;
 
-  
-}
 
 
 
