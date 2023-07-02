@@ -32,7 +32,7 @@ document.querySelector('.down-scroll').addEventListener('click',()=>{
   });
   
   document.querySelector('.up-scroll').addEventListener('click',()=>{
-    offset+= 100;
+    offset-= 100;
     if(offset=400){
       offset=400;
     }
