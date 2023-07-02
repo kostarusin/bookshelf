@@ -1,5 +1,6 @@
 //import categories from '../../categories_list.json';
 //import top_books from '../../top_books.json';
+import { receiveBookByCategory } from './category.js';
 import BookApi from './services.js';
 const bookApi = new BookApi();
 
@@ -33,6 +34,7 @@ listCategoriesEl.addEventListener('click', event => {
     //toUpperCase(textCategory);
     getBooksByCategory().then(category => {
       console.log(category);
+      receiveBookByCategory(category);
     });
   }
 });
