@@ -1,0 +1,13 @@
+:root {
+    --background-color: #202024;
+    --header-background-color: #111111;
+    --logo-text-color: #000000;
+    --font-color-dark: #ffffff;
+    --header-border-color: #F6F6F6;
+    --font-color-selected: #EAC645;
+    --categories-font-color: rgba(255, 255, 255, 0.6);
+    --pop-up-bg-color: #202024;
+    --categories-scroll-color: rgba(17, 17, 17, 0.6);
+}
+
+
