@@ -11,7 +11,6 @@ allBooksListEl.addEventListener('click', e => {
 
   if (e.target.tagName === 'BUTTON') {
     const category = e.target.closest('.category-item').dataset.category;
-
     console.info(
       `button See More clicked... Go to function view books by category (${category})`
     );
