@@ -1,3 +1,4 @@
+import { receiveBookByCategory } from './category.js';
 import { renderTopBooks } from './render-top-books.js';
 
 // import topBooks from './static-json-temporary/top_books.json';
@@ -5,13 +6,23 @@ import { renderTopBooks } from './render-top-books.js';
 
 import BookApi from './services.js';
 
+
+
 const bookApi = new BookApi();
 
-bookApi
-  .getTopBook()
-  .then(topBooks => {
-    renderTopBooks(topBooks);
-  })
-  .catch(error => {
-    console.log(error);
-  });
+// bookApi
+//   .getTopBook()
+//   .then(topBooks => {
+//     renderTopBooks(topBooks);
+//   })
+//   .catch(error => {
+//     console.log(error);
+//   });
+
+
+bookApi.getBooksByCategory('Series Books').then(category => {
+  console.log(category);
+  receiveBookByCategory(category)
+}).catch(err => {
+  console.log(err);
+})
