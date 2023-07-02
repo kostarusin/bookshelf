@@ -1,4 +1,3 @@
-
 /*-backdrop-*/
 .backdrop {
    position: fixed;
@@ -82,6 +81,7 @@
    align-items: center;
    flex-direction: column;
    gap: 40px;
+   margin-bottom: 40px;
    /* overflow-y: scroll;
       scrollbar-color: blue grey;
       scrollbar-width: thin; */
@@ -282,6 +282,7 @@
    text-align: center;
    width: 242px;
    color: rgba(17, 17, 17, 0.50);
+   margin-top: 8px;
 
    font-size: 10px;
    font-family: DM Sans;
@@ -297,9 +298,10 @@
    .modal-book-shopping-list-btn-shopping-list-message {
       width: 324px;
       display: flex;
-      height: 64px;
+      
       flex-direction: column;
       flex-shrink: 0;
+
 
       align-self: center;
 

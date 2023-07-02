@@ -30,9 +30,21 @@ export function renderModal(bookDetails) {
       <ul class="modal-book-marketplaces">
         ${generateMarketplaceLinks(buy_links)}
       </ul>
+    </div>
   `;
 
   modalContainer.innerHTML = markup;
+
+  const closeModal = () => {
+    const backdrop = document.querySelector('.backdrop');
+    const modal = document.querySelector('#modal');
+
+    backdrop.classList.add('is-hidden');
+    modal.classList.remove('is-visible');
+  };
+
+  const closeButton = document.querySelector('.close');
+  closeButton.addEventListener('click', closeModal);
 }
 
 function generateMarketplaceLinks(buy_links) {
