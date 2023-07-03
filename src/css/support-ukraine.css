@@ -74,10 +74,44 @@ margin-top: 16px;
 }
 
 
-/* // Tablet ======================================= */
+/* ================ Tablet ====================== */
 @media screen and (min-width: 768px) {
+
+    .position_support{
+        padding-top: 40px;
+    }
+    .section_support{
+        width: 335px;
+        height:472px;
+      
+    }
+    
+    .slider_line{
+        height:292px;   
+    }
+  
+    .ol_support{
+        list-style-type: none;
+        counter-reset: item;
+        color:rgba(255, 255, 255, 1);
+        font-weight:400;
+        font-size:14px;
+        line-height:1.28;
+        letter-spacing:-4%;
+        margin-top:40px;
+      
+}
+.down-scroll{
+    padding-left: 149px;
+    padding-bottom: 14px;
+    margin-top: 32px;
+    }
+}
+/* ================ Desctop ====================== */
+@media screen and (min-width: 1440px) {
 
     .position_support{
         padding-top: 86px;
     }
+
 }
