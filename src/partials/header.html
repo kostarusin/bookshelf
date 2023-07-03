@@ -2,10 +2,12 @@
     <div class="container">
     <nav class="header-nav">
       <a href="./index.html" class="header-logo"
-                ><svg class="logo-header" width="109" height="28">
+                ><svg class="logo-header" width="24" height="24">
                   <use href="/src/images/sprite.svg#icon-logo"></use>
+                </svg><svg class="logo-name-header" width="77" height="14">
+                  <use href="/src/images/sprite.svg#icon-name-logo"></use>
                 </svg></a>
-      <ul class="site-nav-header header-list">
+      <div class="site-nav-header">
         <button class="header-item">
           <a href="./index.html" class="header-nav-link">HOME</a>
         </button>
@@ -15,14 +17,14 @@
               <use href="/src/images/sprite.svg#icon-modal-lock-black"></use>
             </svg></a>
         </button>
-      </ul>
+      </div>
     </nav>
     <div class="header-cont-pre">
-      <ul class="header-team-user header-list">
+      <div class="header-team-user">
         <input class="switch" type="checkbox" id="js-switch-theme">
         <label class="switch-label" for="js-switch-theme">Toggle</label>
         <button class="header-user">
-          <a class="header-user-link header-link" href=""
+          <a class="header-user-link" href=""
             ><svg class="icon-user-header" width="24" height="24">
               <use href="/src/images/sprite.svg#icon-user"></use>
             </svg>Stephen<svg class="arrow-down-header" width="23" height="26">
@@ -30,7 +32,7 @@
             </svg>
           </a>
         </button>
-      </ul>
+      </div>
     </div>
     <button type="button" class="header-burger header-open-modal" data-menu-open>
       <svg width="28" height="28">

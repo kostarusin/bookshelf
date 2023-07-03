@@ -5,7 +5,7 @@ function initThemeSelector() {
   );
   const darkTheme = new URL('../css/themes/dark-theme.css', import.meta.url);
   const themeStylesLink = document.getElementById('theme-styles-link');
-  // const themeSelectBtn = document.querySelector('.switcher');
+  const themeSelectInput = document.getElementById('js-switch-theme');
   let currentAttribute = localStorage.getItem('theme');
 
   if (!currentAttribute) {
@@ -17,10 +17,10 @@ function initThemeSelector() {
     themeStylesLink.setAttribute('href', themeName);
   }
 
-  // themeSelectBtn.addEventListener('click', onClick);
+  themeSelectInput.addEventListener('change', onClick);
 
   function onClick() {
-    if (currentAttribute === defaultTheme) {
+    if (this.checked) {
       activateTheme(darkTheme);
       currentAttribute = darkTheme;
     } else {
