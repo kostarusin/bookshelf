@@ -2,10 +2,7 @@
     padding-top: 40px;
 }
 .section_support{
-    background:radial-gradient(
-        189.32% 190.93% at 59.76% -23.42%,
-        #4f2ee8 18.03%,
-        #fff 100%);
+    background:var(--support-ukraine-modal-menu-background);
     width: 335px;
     height:352px;
     border-radius: 16px;
@@ -61,14 +58,20 @@ display: flex;
 gap:12px;
 }
 
-.down-scroll{
+.scroll{
 position: absolute;
 padding-left: 152px;
 padding-bottom: 20px;
 margin-top: 16px;
 }
+.scroll-up{
+    position: absolute;
+    padding-left: 120px;
+    padding-bottom: 20px;
+    margin-top: 16px;
+    }
 .scroll_svg{
-    background: #fff;
+    background: var(  --support-ukraine-font-color);
     border-radius: 50%;
  
 }
@@ -101,10 +104,15 @@ margin-top: 16px;
         margin-top:40px;
       
 }
-.down-scroll{
+.scroll{
     padding-left: 149px;
     padding-bottom: 14px;
     margin-top: 32px;
+    }
+    .scroll-up{
+        padding-left: 149px;
+        padding-bottom: 14px;
+        margin-top: 32px;  
     }
 }
 /* ================ Desctop ====================== */

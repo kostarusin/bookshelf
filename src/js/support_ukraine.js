@@ -69,15 +69,26 @@ let array=[{
   };
   markUpSupportUkraine();
   let offset=0;
-document.querySelector('.down-scroll').addEventListener('click',()=>{
+document.querySelector('.scroll').addEventListener('click',()=>{
     offset+= 100;
-    if(offset>=400){
-      offset=400;
+    document.querySelector('.scroll-up').classList.remove("visually-hidden") 
+   
+    if(offset>350){
+      offset=350;
+      document.querySelector('.scroll').classList.add("visually-hidden")
+     // document.querySelector('.scroll-up').classList.remove("visually-hidden") 
     }
-    divEl.style.top=-offset+'px'
+      divEl.style.top=-offset+'px'
   });
   
-  
+  document.querySelector('.scroll-up').addEventListener('click',()=>{
+  offset-= 100;
+  if(offset>100){
+  //document.querySelector('.scroll-up').classList.add("visually-hidden"); 
+  //document.querySelector('.scroll').classList.remove("visually-hidden");
+}
+  divEl.style.top=-offset+'px'
+   }); 
   
   
   
