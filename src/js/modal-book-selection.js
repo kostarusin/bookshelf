@@ -36,34 +36,6 @@ export function renderModal(bookDetails) {
   modalContainer.innerHTML = markup;
 }
 
-// const closeModal = () => {
-//   const backdrop = document.querySelector('.backdrop');
-//   const modal = document.querySelector('#modal');
-
-//   backdrop.classList.add('is-hidden');
-//   modal.classList.remove('is-visible');
-// };
-
-// const handleClickOutside = event => {
-//   const modal = document.querySelector('#modal');
-
-//   if (!modal.contains(event.target)) {
-//     closeModal();
-//   }
-// };
-
-// const handleEscapeKey = event => {
-//   if (event.key === 'Escape') {
-//     closeModal();
-//   }
-// };
-
-// const closeButton = document.querySelector('.close');
-// closeButton.addEventListener('click', closeModal);
-
-// document.addEventListener('click', handleClickOutside);
-// document.addEventListener('keydown', handleEscapeKey);
-
 function generateMarketplaceLinks(buy_links) {
   return buy_links
     .map(({ name, url }) => {
@@ -77,7 +49,7 @@ function generateMarketplaceLinks(buy_links) {
               target="_blank"
               rel="noopener noreferrer"
               >
-                <img height="36" width="36" src="${img}" alt="${name}" loading="lazy"/>
+                <img class="${iconId}" height="36" width="36" src="${img}" alt="${name}" loading="lazy"/> 
             </a>
           </li>
         `;
@@ -97,3 +69,4 @@ function generateMarketplaceLinks(buy_links) {
     })
     .join('');
 }
+
