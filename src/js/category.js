@@ -46,8 +46,8 @@ export function receiveBookByCategory(selectedCategory) {
     categoryBookList.innerHTML = createBookCard(selectedCategory);
 }
 
-buttonSeeMore.addEventListener('click', showCategory);
+// buttonSeeMore.addEventListener('click', showCategory);
 
-function showCategory(e) {
-    e.preventDefault();
-}
+// function showCategory(e) {
+//     e.preventDefault();
+// }
