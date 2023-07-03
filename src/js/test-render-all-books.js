@@ -52,7 +52,6 @@ function openModal(bookId) {
       removeEventListener('click', event1);
       removeEventListener('click', event2);
       removeEventListener('keydown', event3);
-      document.body.classList.remove('modal-open');
     };
 
     const event1 = closeButton.addEventListener('click', () => {
