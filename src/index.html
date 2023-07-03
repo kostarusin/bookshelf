@@ -20,21 +20,30 @@
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <include src="./partials/header.html"></include>
-    <main>
-      <include src="./partials/categories.html"></include>
-      <include src="./partials/support-ukraine.html"></include>
-      <include src="./partials/all-books.html"></include>
-      <include src="./partials/books-by-category.html"></include>
-      <include src="./partials/shopping-list.html"></include>
-    </main>
+    <div class="container">
+      <include src="./partials/header.html"></include>
+      <main>
+        <div class="page-markup-wrap">
+          <div class="page-markup-element-1">
+            <include src="./partials/categories.html"></include>
+            <include src="./partials/support-ukraine.html"></include>
+          </div>
+          <div class="page-markup-element-2">
+            <include src="./partials/all-books.html"></include>
+            <include src="./partials/books-by-category.html"></include>
+          </div>
+        </div>
+        <include src="./partials/shopping-list.html"></include>
+      </main>
+    
     <include src="./partials/modal-book-selection.html"></include>
     <include src="./partials/modal-mobile-menu.html"></include>
     <include src="./partials/modal-authorization.html"></include>
-    <include src="./partials/buttons-temporary.html"></include>
+    <!-- <include src="./partials/buttons-temporary.html"></include> -->
     <include src="./partials/loader.html"></include>
     <include src="./partials/loader.html"></include>
     <include src="./partials/scroll-up.html"></include>
-    <script type="module" src="./index.js"></script>
-  </body>
+  </div>
+     <script type="module" src="./index.js"></script>
+      </body>
 </html>
