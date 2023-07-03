@@ -1,51 +1,3 @@
-/* Reset styles */
-/* * {
-   box-sizing: border-box;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-   margin: 0;
-}
-
-ul {
-   margin: 0;
-   padding: 0;
-   list-style: none;
-}
-
-a {
-   color: currentColor;
-   text-decoration: none;
-}
-
-button {
-   font-family: inherit;
-   cursor: pointer;
-}
-
-img {
-   display: block;
-   max-width: 100%;
-   height: auto;
-}
-
-
-input,
-textarea {
-   outline: none;
-}
-
-iframe {
-   border: none;
-} */
-
-
 /*-backdrop-*/
 .backdrop {
    position: fixed;
@@ -59,7 +11,8 @@ iframe {
       visibility 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.backdrop.is-hidden {
+.backdrop.is-hidden,
+.modal-book-shopping-list-btn-shopping-list-message.is-hidden {
    opacity: 0;
    visibility: hidden;
    pointer-events: none;
@@ -73,13 +26,21 @@ iframe {
    width: 24px;
    height: 24px;
    position: absolute;
-   right: 12px;
-   top: 12px;
-   color: #111111;
-   float: right;
-   font-size: 28px;
-   font-weight: bold;
+   right: 24px;
+   top: 24px; 
+  
    cursor: pointer;
+   stroke: #111111;
+}
+@media screen and (min-width: 768px) {
+   .close {
+      width: 28px;
+      height: 28px;
+   }
+}
+.close:hover,
+.close:focus{
+   stroke: #4F2EE8;   
 }
 
 .modal-book-selection {
@@ -128,6 +89,7 @@ iframe {
    align-items: center;
    flex-direction: column;
    gap: 40px;
+   margin-bottom: 40px;
    /* overflow-y: scroll;
       scrollbar-color: blue grey;
       scrollbar-width: thin; */
@@ -278,20 +240,14 @@ iframe {
    align-items: center;
    gap: 20px;
    width: 287px;
-   /* height: 36px;; */
+   height: 36px;
    flex-wrap: wrap;
-   background-color: #4F2EE8;
+   
 }
-
-@media screen and (min-width: 768px) {
-   .modal-book-marketplaces {
-      gap: 20px;
-   }
+.modal-book-trading-platform{
+   height: 36px;
+   
 }
-
-
-
-.modale-book-trading-platform {}
 
 .modal-book-shopping-list-btn {
    display: flex;
@@ -334,6 +290,7 @@ iframe {
    text-align: center;
    width: 242px;
    color: rgba(17, 17, 17, 0.50);
+   margin-top: 8px;
 
    font-size: 10px;
    font-family: DM Sans;
@@ -349,9 +306,10 @@ iframe {
    .modal-book-shopping-list-btn-shopping-list-message {
       width: 324px;
       display: flex;
-      height: 64px;
+      
       flex-direction: column;
       flex-shrink: 0;
+
 
       align-self: center;
 
@@ -360,6 +318,7 @@ iframe {
       letter-spacing: -0.48px;
    }
 }
+
 
 
 

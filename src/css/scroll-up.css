@@ -3,17 +3,21 @@
    position: fixed;
    bottom: 20px;
    right: 20px;
-   width: 40px;
-   height: 40px;
-   background-color: #111111;
-   color: #FFFFFF;
-   text-align: center;
-   line-height: 40px;
-   font-size: 20px;
+   width: 54px;
+   height: 54px;
+   background: #4F2EE8;
+   border: 5px solid #C3B9F1;
    border-radius: 50%;
    z-index: 9999;
 }
+.scroll-top-svg{
+   width: 18px;
+   height: 18px;
+   fill: #FFFFFF;
+}
 
 .scroll-top.show {
-   display: block;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
