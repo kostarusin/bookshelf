@@ -1,6 +1,5 @@
-import { receiveBookByCategory } from './category.js';
 import { renderTopBooks } from './render-top-books.js';
-import { renderModal } from './modal-book-selection';
+import { openModal } from './remote-modal';
 
 import BookApi from './services.js';
 
@@ -17,9 +16,6 @@ bookApi
 
 const allBooksListEl = document.querySelector('.all-book-list');
 
-const modalBackdropEl = document.querySelector('.backdrop');
-
-// ============================================================================
 allBooksListEl.addEventListener('click', e => {
   e.preventDefault();
 
@@ -36,7 +32,7 @@ allBooksListEl.addEventListener('click', e => {
     openModal(bookItem.dataset.bookId);
   }
 });
-// ============================================================================
+
 
 function openModal(bookId) {
   bookApi.getBookDetail(bookId).then(bookDetails => {
@@ -81,3 +77,4 @@ function openModal(bookId) {
 //   .catch(err => {
 //     console.log(err);
 //   });
+
