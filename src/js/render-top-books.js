@@ -5,26 +5,26 @@ import 'swiper/swiper.min.css';
 const allBooksTitleEl = document.querySelector('.all-books-title');
 const allBooksListEl = document.querySelector('.all-book-list');
 
-// ============================================================================
-allBooksListEl.addEventListener('click', e => {
-  e.preventDefault();
+// // ============================================================================
+// allBooksListEl.addEventListener('click', e => {
+//   e.preventDefault();
 
-  if (e.target.tagName === 'BUTTON') {
-    const category = e.target.closest('.category-item').dataset.category;
-    console.info(
-      `button See More clicked... Go to function view books by category (${category})`
-    );
-  }
+//   if (e.target.tagName === 'BUTTON') {
+//     const category = e.target.closest('.category-item').dataset.category;
+//     console.info(
+//       `button See More clicked... Go to function view books by category (${category})`
+//     );
+//   }
 
-  const bookItem = e.target.closest('.category-book-item');
+//   const bookItem = e.target.closest('.category-book-item');
 
-  if (bookItem) {
-    console.dir(
-      `bookItem clicked... open modal with book details ${bookItem.dataset.bookId}`
-    );
-  }
-});
-// ============================================================================
+//   if (bookItem) {
+//     console.dir(
+//       `bookItem clicked... open modal with book details ${bookItem.dataset.bookId}`
+//     );
+//   }
+// });
+// // ============================================================================
 
 export function renderTopBooks(topBookList) {
   allBooksTitleEl.innerHTML =
