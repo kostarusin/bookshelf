@@ -1,21 +1,15 @@
 import BookApi from './services';
-import Pagination from 'tui-pagination';
+// import Pagination from 'tui-pagination';
 const bookApi = new BookApi();
 const books=document.querySelector(".shopping-list-books");
 const categories = bookApi.getBookDetail("643282b1e85766588626a087");
-
-categories.then(i=>{
-     console.log(MakeHTML(i))
-     books.insertAdjacentHTML('beforeend', MakeHTML(i));
-    })
-
 function GetShop(c,Shopname){
     const link=c
     for (element of c) {
         if (element.name==Shopname)
         return element.url;
       }
-};
+}
 function MakeHTML({book_image="../images/logo.png",title,list_name,description,author,buy_links}){
     //console.log(c);
     const html= 
@@ -59,6 +53,56 @@ function MakeHTML({book_image="../images/logo.png",title,list_name,description,a
 return html;
 }
 
+export default class ShoppingListMake{ 
+    constructor(all){
+        this.list=all;
+        this.page=1;
+        this.count_of_books=4; // в других 3 в мобильном 4.
+    }
+    clearAll() {
+        books.innerHTML = '';
+      }
+
+    
+
+
+    Make(){
+        const Items= this.list
+        .slice(this.count_of_books*(this.page-1),this.count_of_books*this.page)
+        .map(MakeHTML)
+        .join();
+        books.insertAdjacentHTML('beforeend',Items);
+    }
+    removeByName(name){
+        this.list=this.list.filter((value, index, arr) => {
+            if (value.title === name)
+            {
+                arr.splice(index, 1);
+                return true;
+            }
+                return false;  
+        });
+    }
+    MakeToPage(index){
+        this.page=index;
+        const Items= this.list
+        .slice(this.count_of_books*(this.page-1),this.count_of_books*this.page)
+        .map(MakeHTML)
+        .join();
+        books.insertAdjacentHTML('beforeend',Items);
+    }
+}
+
+
+
+
+
+
+categories.then(i=>{
+    const Make= new ShoppingListMake([i,i,i,i,i,i,i,i,i]);
+    Make.clearAll();
+    Make.MakeToPage(3);
+    })
 
 
 
@@ -66,16 +110,20 @@ return html;
 
 
 
-var pagination = new tui.Pagination('pagination', {
-    totalItems: 500,
-    itemsPerPage: 5,
-    visiblePages: 2
-});
 
-pagination.on('beforeMove', function(eventData) {
-    return confirm('Go to page ' + eventData.page + '?');
-});
 
-pagination.on('afterMove', function(eventData) {
-    alert('The current page is ' + eventData.page);
-});
+
+
+// var pagination = new tui.Pagination('pagination', {
+//     totalItems: 500,
+//     itemsPerPage: 5,
+//     visiblePages: 2
+// });
+
+// pagination.on('beforeMove', function(eventData) {
+//     return confirm('Go to page ' + eventData.page + '?');
+// });
+
+// pagination.on('afterMove', function(eventData) {
+//     alert('The current page is ' + eventData.page);
+// });
