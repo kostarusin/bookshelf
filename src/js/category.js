@@ -1,9 +1,11 @@
 // функція яка буде рендерити картку для пошуку за категоріями
 import Notiflix from 'notiflix';
+import BookApi from './services.js';
+const bookApi = new BookApi();
 
-const categoryBookList = document.querySelector('.category-book-list');
+const categoryBookList = document.querySelector('.category-books-list');
 const categoryTitle = document.querySelector('.category-books-title');
-const allBooksWrapper = document.querySelector('.all-books-wrapper');
+const buttonSeeMore = document.querySelector('.see-more__button');
 
 function createBookCard(books) {
   console.log(books);
@@ -12,9 +14,9 @@ function createBookCard(books) {
       return `
         <div class="book-card">
             <a href="#" class="book-link">
-            <img class="book-image" src="${book_image}" alt="${title}" loading="lazy"/>
+            <img class="book-image-category" src="${book_image}" alt="${title}" loading="lazy"/>
             <h2 class="book-title">${title}</h2>
-            <p class="book-author">${author}</p>
+            <p class="author">${author}</p>
             <div class="book-overlay">${description}</div>
             </a>
         </div>
@@ -43,8 +45,13 @@ export function receiveBookByCategory(selectedCategory) {
       'Unfortunately there are no books under seleceted category'
     );
   }
-  // allBooksWrapper.style.display = 'none';
 
   categoryTitle.innerHTML = createCategoryTitle(selectedCategory[0].list_name);
   categoryBookList.innerHTML = createBookCard(selectedCategory);
 }
+
+// buttonSeeMore.addEventListener('click', showCategory);
+
+// function showCategory(e) {
+//     e.preventDefault();
+// }
