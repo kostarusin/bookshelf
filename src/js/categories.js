@@ -1,5 +1,3 @@
-//import categories from '../../categories_list.json';
-//import top_books from '../../top_books.json';
 import BookApi from './services.js';
 import { renderTopBooks } from './render-top-books.js';
 import { receiveBookByCategory } from './category.js';
@@ -8,6 +6,10 @@ const categories = bookApi.getCategories();
 
 const listCategoriesEl = document.querySelector('.list-categories');
 let activeCategoryEl = document.querySelector('.active-category');
+const categoryBookList = document.querySelector('.category-books-list');
+const categoryTitle = document.querySelector('.category-books-title');
+const allBooksTitleEl = document.querySelector('.all-books-title');
+const allBooksListEl = document.querySelector('.all-book-list');
 
 bookApi
   .getCategories()
@@ -43,9 +45,31 @@ listCategoriesEl.addEventListener('click', event => {
     event.target.classList.add('active-category');
     activeCategoryEl = event.target;
 
-    bookApi.getBooksByCategory(textCategory).then(categories => {
-      receiveBookByCategory(categories);
-      // renderTopBooks(categories);
-    });
+    if (event.target.textContent === 'All Categories') {
+      clearCategory();
+      bookApi
+        .getTopBook()
+        .then(topBooks => {
+          renderTopBooks(topBooks);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    } else {
+      clearAllCategory();
+      bookApi.getBooksByCategory(textCategory).then(categories => {
+        receiveBookByCategory(categories);
+      });
+    }
   }
 });
+
+function clearCategory() {
+  categoryBookList.innerHTML = '';
+  categoryTitle.textContent = '';
+}
+
+function clearAllCategory() {
+  allBooksListEl.innerHTML = '';
+  allBooksTitleEl.textContent = '';
+}
