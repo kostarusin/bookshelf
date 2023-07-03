@@ -1,0 +1,71 @@
+/* Mobile */
+.sign-up-modal-button {
+  display: block;
+  padding: 16px 116px;
+  color: #202024;
+  background-color: #f6f6f6;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.13;
+  text-transform: uppercase;
+  border-radius: 40px;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+    background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+
+.sign-up-modal-button:hover,
+.sign-up-modal-button:focus {
+  color: #f6f6f6;
+  background-color: #111111;
+}
+
+.sign-up-modal-close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  width: 20px;
+  height: 20px;
+}
+
+.sign-up-modal-close-btn-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.sign-up-modal-close-btn:hover,
+.sign-up-modal-close-btn:focus {
+  fill: var(--font-color-selected);
+}
+
+/* tablet,desktop */
+
+.sign-up-modal-button {
+  display: block;
+  padding: 20px 215px;
+  color: #f3f3f3;
+  background-color: #111111;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.33;
+  text-transform: uppercase;
+  border-radius: 40px;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.sign-up-modal-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 28px;
+  height: 28px;
+}
+
+.sign-up-modal-close-btn-icon {
+  width: 28px;
+  height: 28px;
+}
