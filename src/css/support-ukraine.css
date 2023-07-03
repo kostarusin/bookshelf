@@ -1,3 +1,6 @@
+.position_support{
+    padding-top: 40px;
+}
 .section_support{
     background:radial-gradient(
         189.32% 190.93% at 59.76% -23.42%,
@@ -71,6 +74,10 @@ margin-top: 16px;
 }
 
 
+/* // Tablet ======================================= */
+@media screen and (min-width: 768px) {
 
-
-
+    .position_support{
+        padding-top: 86px;
+    }
+}
