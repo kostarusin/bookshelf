@@ -7,7 +7,7 @@
 
 }
 
-.category-book-list {
+.category-books-list {
 display: block;
 }
 
@@ -20,7 +20,7 @@ display: block;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,16 +37,27 @@ display: block;
 }
 
 
-.book-image {
+.book-image-category {
   width: 335px;
   height: 485px;
   border-radius: 8px;
+}
+
+.author {
+  margin-top: 4px;
+  color: var(--author-category-booklist-font-color);
+  font-size: 12px;
+  font-family: DM Sans;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.17;
 }
 
 .book-card {
   width: 335px;
   position: relative;
   overflow: hidden;
+  margin-bottom: 30px;
 }
 
 .all-books-title-accent {
@@ -84,7 +95,7 @@ display: block;
     width: 100%;
   }
 
-  .category-book-list {
+  .category-books-list {
     margin-top: 18px;
     display: flex;
     flex-wrap: wrap;
