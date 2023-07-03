@@ -5,27 +5,6 @@ import 'swiper/swiper.min.css';
 const allBooksTitleEl = document.querySelector('.all-books-title');
 const allBooksListEl = document.querySelector('.all-book-list');
 
-// // ============================================================================
-// allBooksListEl.addEventListener('click', e => {
-//   e.preventDefault();
-
-//   if (e.target.tagName === 'BUTTON') {
-//     const category = e.target.closest('.category-item').dataset.category;
-//     console.info(
-//       `button See More clicked... Go to function view books by category (${category})`
-//     );
-//   }
-
-//   const bookItem = e.target.closest('.category-book-item');
-
-//   if (bookItem) {
-//     console.dir(
-//       `bookItem clicked... open modal with book details ${bookItem.dataset.bookId}`
-//     );
-//   }
-// });
-// // ============================================================================
-
 export function renderTopBooks(topBookList) {
   allBooksTitleEl.innerHTML =
     'Best Sellers&nbsp;<span class="all-books-title-accent">Books<span>';
@@ -67,9 +46,9 @@ export function renderTopBooks(topBookList) {
 // Function Create Category Book List ================
 function createBookCategoryMarkup({ list_name, books }) {
   return `
-    <li class="category-item swiper" data-category="${list_name}">
-      <h2 class="category-title">${list_name}</h2>
-      <ul class="category-book-list swiper-wrapper">
+    <li class="all-books-category-item swiper" data-category="${list_name}">
+      <h2 class="all-books-category-title">${list_name}</h2>
+      <ul class="all-books-category-book-list swiper-wrapper">
         ${createBookCardMarkup(books)}
       </ul>
       <div class="swiper-btn-prev"></div>
@@ -87,13 +66,13 @@ function createBookCardMarkup(books) {
     .map(
       ({ _id, title, author, book_image }) => `
   <li class="category-book-item swiper-slide" data-book-id="${_id}">
-    <a href="#" class="book-link">
-      <div class="book-image-wrapper">
-        <img class="book-image" src="${book_image}" alt="${title}" loading="lazy"/>
-        <div class="book-overlay">quick view</div>
+    <a href="#" class="all-books-book-link">
+      <div class="all-books-book-image-wrapper">
+        <img class="all-books-book-image" src="${book_image}" alt="${title}" loading="lazy"/>
+        <div class="all-books-book-overlay">quick view</div>
       </div>
-      <h3 class="book-title">${title}</h3>
-      <p class="book-author">${author}</p>
+      <h3 class="all-books-book-title">${title}</h3>
+      <p class="all-books-book-author">${author}</p>
     </a>
   </li>
   `
