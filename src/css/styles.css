@@ -111,15 +111,24 @@ body {
   :root {
     --container-width: 375px;
   }
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 
-  @media (min-width: 768px) {
-    :root {
-      --container-width: 768px;
-    }
-    .container {
-      padding-left: 32px;
-      padding-right: 32px;
-    }
+@media (min-width: 768px) {
+  :root {
+    --container-width: 768px;
+  }
+  .container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .page-markup-element-1 {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
   }
 }
 
@@ -130,5 +139,13 @@ body {
   .container {
     padding-left: 24px;
     padding-right: 24px;
+  }
+  .page-markup-element-1 {
+    display: block;
+  }
+  .page-markup-wrap {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
   }
 }
