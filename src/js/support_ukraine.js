@@ -61,7 +61,7 @@ let array=[{
     `;
     return listItem;
   });
-  
+
   list.forEach(item=>{
   olEl.appendChild(item)
   });
@@ -82,13 +82,15 @@ document.querySelector('.scroll').addEventListener('click',()=>{
   });
   
   document.querySelector('.scroll-up').addEventListener('click',()=>{
-  offset-= 100;
-  if(offset>100){
+    document.querySelector('.scroll').classList.remove("visually-hidden") 
+  offset-= 350;
+  if(offset>350 ){      document.querySelector('.scroll-up').classList.add("visually-hidden");
   //document.querySelector('.scroll-up').classList.add("visually-hidden"); 
   //document.querySelector('.scroll').classList.remove("visually-hidden");
 }
-  divEl.style.top=-offset+'px'
-   }); 
-  
-  
-  
+   divEl.style.top=-offset+'px'
+   });
+   
+   
+
+   
