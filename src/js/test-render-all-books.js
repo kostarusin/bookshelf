@@ -10,22 +10,22 @@ import BookApi from './services.js';
 
 const bookApi = new BookApi();
 
-// bookApi
-//   .getTopBook()
-//   .then(topBooks => {
-//     renderTopBooks(topBooks);
-//   })
-//   .catch(error => {
-//     console.log(error);
-//   });
-
-
 bookApi
-  .getBooksByCategory('Hardcover Fiction')
-  .then(category => {
-    console.log(category);
-    receiveBookByCategory(category);
+  .getTopBook()
+  .then(topBooks => {
+    renderTopBooks(topBooks);
   })
-  .catch(err => {
-    console.log(err);
+  .catch(error => {
+    console.log(error);
   });
+
+
+// bookApi
+//   .getBooksByCategory('Audio Fiction')
+//   .then(category => {
+//     console.log(category);
+//     receiveBookByCategory(category);
+//   })
+//   .catch(err => {
+//     console.log(err);
+//   });
