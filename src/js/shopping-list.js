@@ -1,5 +1,5 @@
 import BookApi from './services';
-// import Pagination from 'tui-pagination';
+ import Pagination from 'tui-pagination';
 const bookApi = new BookApi();
 const books=document.querySelector(".shopping-list-books");
 const categories = bookApi.getBookDetail("643282b1e85766588626a087");
@@ -13,7 +13,7 @@ function GetShop(c,Shopname){
 function MakeHTML({book_image="../images/logo.png",title,list_name,description,author,buy_links}){
     //console.log(c);
     const html= 
-    `<div class="shopping-list-books-item">
+    `<li class="shopping-list-books-item">
     <div class="shopping-list-books-item-img-div">
     <img src="${book_image}" alt="${title}" class="shopping-list-books-item-img">
     </div>
@@ -49,7 +49,7 @@ function MakeHTML({book_image="../images/logo.png",title,list_name,description,a
     </svg>
     </a>
 </div>
-</div>`
+</li>`
 return html;
 }
 
@@ -58,6 +58,38 @@ export default class ShoppingListMake{
         this.list=all;
         this.page=1;
         this.count_of_books=4; // в других 3 в мобильном 4.
+        this.pagination = new Pagination('pagination', {
+            // totalItems: y,
+             visiblePages: 2,
+             itemsPerPage: 2,
+             template: {
+                 page: '<a href="#" class="tui-page-btn">{{page}}p</a>',
+                 currentPage: '<strong class="tui-page-btn tui-is-selected">{{page}}p</strong>',
+                 moveButton:
+                     '<a href="#" class="tui-page-btn tui-{{type}} custom-class-{{type}}">' +
+                         '<span class="tui-ico-{{type}}">{{type}}</span>' +
+                     '</a>',
+                 disabledMoveButton:
+                     '<span class="tui-page-btn tui-is-disabled tui-{{type}} custom-class-{{type}}">' +
+                         '<span class="tui-ico-{{type}}">{{type}}</span>' +
+                     '</span>',
+                 moreButton:
+                     '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip custom-class-{{type}}">' +
+                         '<span class="tui-ico-ellip">...</span>' +
+                     '</a>'
+             }
+             
+         });
+        
+       
+
+    }
+
+    Set_Plagination(){
+
+        this.pagination.totalItems=parseInt((Math.ceil(this.list.length/this.count_of_books)));
+        // console.log("It work"+ this.pagination.totalItems);
+
     }
     clearAll() {
         books.innerHTML = '';
@@ -97,33 +129,19 @@ export default class ShoppingListMake{
 
 
 
+var i;
+categories.then(getd=>i=getd).finally(()=>{
 
-categories.then(i=>{
-    const Make= new ShoppingListMake([i,i,i,i,i,i,i,i,i]);
-    Make.clearAll();
-    Make.MakeToPage(3);
-    })
-
-
-
-
-
-
-
-
-
-
-
-// var pagination = new tui.Pagination('pagination', {
-//     totalItems: 500,
-//     itemsPerPage: 5,
-//     visiblePages: 2
-// });
-
-// pagination.on('beforeMove', function(eventData) {
-//     return confirm('Go to page ' + eventData.page + '?');
-// });
-
-// pagination.on('afterMove', function(eventData) {
-//     alert('The current page is ' + eventData.page);
-// });
+    const Make= new ShoppingListMake([i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i,i]);
+    // Make.clearAll();
+    // Make.SetPaginationPages();
+    Make.Set_Plagination();
+    Make.pagination.on('afterMove', function(eventData) {
+       // alert('The current page is ' + eventData.page);
+       Make.clearAll();
+        Make.MakeToPage(eventData.page);
+        // console.log("DOIR")
+        
+    });
+    Make.MakeToPage(1);
+})
