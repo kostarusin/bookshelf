@@ -1,15 +1,12 @@
+//import categories from '../../categories_list.json';
+//import top_books from '../../top_books.json';
 import BookApi from './services.js';
 import { renderTopBooks } from './render-top-books.js';
-import { receiveBookByCategory } from './category.js';
 const bookApi = new BookApi();
 const categories = bookApi.getCategories();
 
 const listCategoriesEl = document.querySelector('.list-categories');
 let activeCategoryEl = document.querySelector('.active-category');
-const categoryBookList = document.querySelector('.category-books-list');
-const categoryTitle = document.querySelector('.category-books-title');
-const allBooksTitleEl = document.querySelector('.all-books-title');
-const allBooksListEl = document.querySelector('.all-book-list');
 
 bookApi
   .getCategories()
@@ -36,40 +33,11 @@ listCategoriesEl.addEventListener('click', event => {
 
   if (event.target.nodeName === 'A') {
     const textCategory = event.target.textContent;
-    console.log(textCategory);
-    if (activeCategoryEl === event.target) {
-      return;
-    }
-
-    activeCategoryEl.classList.remove('active-category');
-    event.target.classList.add('active-category');
-    activeCategoryEl = event.target;
-
-    if (event.target.textContent === 'All Categories') {
-      clearCategory();
-      bookApi
-        .getTopBook()
-        .then(topBooks => {
-          renderTopBooks(topBooks);
-        })
-        .catch(error => {
-          console.log(error);
-        });
-    } else {
-      clearAllCategory();
-      bookApi.getBooksByCategory(textCategory).then(categories => {
-        receiveBookByCategory(categories);
-      });
-    }
+    //console.log(textCategory);
+    //console.log(event.target);
+    //toUpperCase(textCategory);
+    getBooksByCategory().then(category => {
+      console.log(category);
+    });
   }
 });
-
-function clearCategory() {
-  categoryBookList.innerHTML = '';
-  categoryTitle.textContent = '';
-}
-
-function clearAllCategory() {
-  allBooksListEl.innerHTML = '';
-  allBooksTitleEl.textContent = '';
-}
