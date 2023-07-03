@@ -241,13 +241,19 @@
    gap: 20px;
    width: 287px;
    height: 36px;
-   flex-wrap: wrap;
-   
+   flex-wrap: wrap;   
+
 }
 .modal-book-trading-platform{
-   height: 36px;
-   
+   height: 36px;  
 }
+
+.modal-book-trading-platform:hover,
+.modal-book-trading-platform:focus{
+   filter: saturate(0%) drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.15));
+
+}
+
 
 .modal-book-shopping-list-btn {
    display: flex;
