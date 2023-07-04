@@ -3,7 +3,7 @@ import arrSupport from './static-json-temporary/support_ukraine.json';
 
   const divEl =document.querySelector('.slider_line');
   const olEl=document.querySelector('.ol_support');
-  
+  console.log(divEl,olEl)
   function markUpSupportUkraine(){
     let list = arrSupport.map(item => {
     let listItem = document.createElement('li');
@@ -24,28 +24,30 @@ import arrSupport from './static-json-temporary/support_ukraine.json';
   markUpSupportUkraine();
   let offset=0;
   document.querySelector('.scroll').addEventListener('click',()=>{
-      offset+= 50;
+      offset+= 96;
       //document.querySelector('.scroll-up').classList.remove("visually-hidden") 
-      if(offset>300){
+      if(offset>288){
         offset=0;
        //document.querySelector('.scroll').classList.add("visually-hidden")
-       
+       //document.querySelector('.scroll-up').classList.remove("visually-hidden") 
       }
         divEl.style.top= -offset+'px';
-    });
-    
-    document.querySelector('.scroll-up').addEventListener('click',()=>{
-      offset-= 50;
-      //document.querySelector('.scroll').classList.add("visually-hidden") 
-  
-    if(offset<0 ){   
-      offset=300; 
-     
-    //document.querySelector('.scroll-up').classList.add("visually-hidden"); 
-   // document.querySelector('.scroll').classList.remove("visually-hidden");
-  }
-     divEl.style.top= -offset+'px';
+        //document.querySelector('.scroll').classList.remove("visually-hidden")
+       //document.querySelector('.scroll-up').classList.add("visually-hidden") 
       });
     
-
+//     document.querySelector('.scroll-up').addEventListener('click',()=>{
+//    offset-= 96;
+//   //     //document.querySelector('.scroll').classList.add("visually-hidden") 
   
+//    if(offset<=0 ){   
+//    offset=250 ; 
+     
+//   document.querySelector('.scroll-up').classList.add("visually-hidden"); 
+//   document.querySelector('.scroll').classList.remove("visually-hidden");
+//    }
+//  divEl.style.top= offset+'px';
+//      });
+    
+
+ 
