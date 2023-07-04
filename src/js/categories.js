@@ -1,6 +1,8 @@
 import BookApi from './services.js';
 import { renderTopBooks } from './render-top-books.js';
 import { receiveBookByCategory } from './category.js';
+import { toggleLoader } from './loader';
+
 const bookApi = new BookApi();
 
 const listCategoriesEl = document.querySelector('.list-categories');
@@ -14,6 +16,8 @@ const allBooksWrapperEl = document.querySelector('.all-books-wrapper');
 const categoryBooksWrapperEl = document.querySelector(
   '.category-books-wrapper'
 );
+
+toggleLoader();
 
 bookApi
   .getCategories()
@@ -33,7 +37,8 @@ bookApi
   })
   .catch(error => {
     console.log(error);
-  });
+  })
+  .finally(() => toggleLoader('add'));
 
 listCategoriesEl.addEventListener('click', event => {
   event.preventDefault();
@@ -59,13 +64,20 @@ listCategoriesEl.addEventListener('click', event => {
         })
         .catch(error => {
           console.log(error);
-        });
+        })
+        .finally(() => toggleLoader('add'));
     } else {
       switchBookCategory(false);
 
-      bookApi.getBooksByCategory(textCategory).then(categories => {
-        receiveBookByCategory(categories);
-      });
+      bookApi
+        .getBooksByCategory(textCategory)
+        .then(categories => {
+          receiveBookByCategory(categories);
+        })
+        .catch(error => {
+          console.log(error);
+        })
+        .finally(() => toggleLoader('add'));
     }
   }
 });

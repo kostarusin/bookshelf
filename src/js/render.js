@@ -10,14 +10,14 @@ import BookApi from './services.js';
 
 const bookApi = new BookApi();
 
-toggleLoader();
-
 const allBooksWrapperEl = document.querySelector('.all-books-wrapper');
 const allBooksListEl = document.querySelector('.all-book-list');
 const allBooksTitleEl = document.querySelector('.all-books-title');
 const categoryBooksWrapperEl = document.querySelector(
   '.category-books-wrapper'
 );
+
+toggleLoader();
 
 bookApi
   .getTopBook()
