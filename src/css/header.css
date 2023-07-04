@@ -236,6 +236,7 @@
   }
 
   .header-user {
+    background-color: var(--blue-color);
     background-color: #4f2ee8;
     border-color: transparent;
     border-radius: 36px;
@@ -243,6 +244,7 @@
   }
 
   .header-user-link {
+    color: var(--white-color);
     color: var(--support-ukraine-font-color);
     font-size: 22px;
     font-weight: 700;
@@ -269,6 +271,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--blue-color);
+    fill: var(--header-background-color);
     background-color: #4f2ee8;
     fill: var(--support-ukraine-font-color);
     width: 23px;

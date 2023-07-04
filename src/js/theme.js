@@ -7,31 +7,44 @@ function initThemeSelector() {
   const themeStylesLink = document.getElementById('theme-styles-link');
   const themeSelectInput = document.getElementById('js-switch-theme');
   let currentAttribute = localStorage.getItem('theme');
+  let currentCheckBoxState = localStorage.getItem('state');
 
   if (!currentAttribute) {
     currentAttribute = defaultTheme;
     localStorage.setItem('theme', currentAttribute);
   }
 
-  function activateTheme(themeName) {
+  function activateTheme(themeName, checkState) {
     themeStylesLink.setAttribute('href', themeName);
+    themeSelectInput.checked = checkState;
   }
 
   themeSelectInput.addEventListener('change', onClick);
 
   function onClick() {
     if (this.checked) {
-      activateTheme(darkTheme);
+      activateTheme(darkTheme, this.checked);
       currentAttribute = darkTheme;
+      currentCheckBoxState = this.checked;
     } else {
-      activateTheme(defaultTheme);
+      activateTheme(defaultTheme, false);
       currentAttribute = defaultTheme;
+      currentCheckBoxState = false;
     }
-
     localStorage.setItem('theme', currentAttribute);
+    localStorage.setItem('state', currentCheckBoxState);
   }
 
-  activateTheme(currentAttribute);
+  themeSelectInput.checked = currentCheckBoxState === 'true';
+
+  activateTheme(currentAttribute, themeSelectInput.checked);
 }
 
 initThemeSelector();
+
+
+
+
+
+
+
