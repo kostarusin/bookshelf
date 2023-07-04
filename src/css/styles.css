@@ -75,6 +75,8 @@ img {
 :root {
   --container-width: 100%;
   --author-category-booklist-font-color: #b4afaf;
+  --blue-color: #4f2ee8;
+  --white-color: #ffffff;
   --support-ukraine-font-color: #ffffff;
   --shopping-list-book-card-border-color: rgba(79, 46, 232, 0.4);
   --support-ukraine-modal-menu-background: radial-gradient(
