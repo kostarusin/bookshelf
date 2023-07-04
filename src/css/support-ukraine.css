@@ -1,58 +1,132 @@
-.section_support {
-  background: radial-gradient(
-    189.32% 190.93% at 59.76% -23.42%,
-    #4f2ee8 18.03%,
-    #fff 100%
-  );
-  max-width: 335px;
-  height: 352px;
+
+.position_support{
+  padding-top: 40px;
+}
+.section_support{
+  background:var(--support-ukraine-modal-menu-background);
+  width: 335px;
+  height:352px;
   border-radius: 16px;
+  margin: 0 auto;
 }
 
-.slider_line {
-  width: 300px;
-  height: 200px;
-  position: relative;
+.slider_line{
   top: 0;
+  height:178px;
+  position:relative;
+  margin: auto 0;
   transition: all ease 1s;
 }
+
 .slider {
-  overflow: hidden;
+overflow: hidden;
 }
-.ol_support {
+.ol_support{
   list-style-type: none;
   counter-reset: item;
-  color: rgba(255, 255, 255, 1);
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 1.28;
-  letter-spacing: -4%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  color:rgba(255, 255, 255, 1);
+  font-weight:400;
+  font-size:14px;
+  line-height:1.28;
+  letter-spacing:-4%;
+  margin-top:40px;
+
 }
 .list::before {
-  content: '0' counter(item);
+  content: '0'counter(item);
   counter-increment: item;
-  margin-right: 16px;
+
+ }
+.list{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 159px;
+  height: 32px;
+
+}
+.support_link{
+  margin-left: 16px;}
+.header_support{
+font-weight:700;
+font-size:28px;
+line-height:1.14;
+letter-spacing:-4%;
+padding-left: 40px;
+padding-top: 24px;
+color:rgba(255, 255, 255, 1);
+display: flex;
+gap:12px;
 }
 
-.header_support {
-  font-weight: 700;
-  font-size: 28px;
-  line-height: 1.14;
-  letter-spacing: -4%;
-  padding-left: 40px;
-  padding-top: 24px;
-  margin-bottom: 40px;
-  color: rgba(255, 255, 255, 1);
+.scroll{
+position: absolute;
+padding-left: 152px;
+padding-bottom: 20px;
+margin-top: 16px;
+}
+.scroll-up{
+  position: absolute;
+  padding-left: 120px;
+  padding-bottom: 20px;
+  margin-top: 16px;
+  }
+.scroll_svg{
+  background: var(  --support-ukraine-font-color);
+  border-radius: 50%;
+
 }
 
 .down-scroll {
-  position: fixed;
-  padding-left: 152px;
+position: fixed;
+padding-left: 152px;
 }
 
-.padding {
-  padding-top: 40px;
+
+/* ================ Tablet ====================== */
+@media screen and (min-width: 768px) {
+
+  .position_support{
+      padding-top: 40px;
+  }
+  .section_support{
+      width: 335px;
+      height:472px;
+    
+  }
+  
+  .slider_line{
+      height:292px;   
+  }
+
+  .ol_support{
+      list-style-type: none;
+      counter-reset: item;
+      color:rgba(255, 255, 255, 1);
+      font-weight:400;
+      font-size:14px;
+      line-height:1.28;
+      letter-spacing:-4%;
+      margin-top:40px;
+    
 }
+.scroll{
+  padding-left: 149px;
+  padding-bottom: 14px;
+  margin-top: 32px;
+  }
+  .scroll-up{
+      padding-left: 149px;
+      padding-bottom: 14px;
+      margin-top: 32px;  
+  }
+}
+/* ================ Desctop ====================== */
+@media screen and (min-width: 1440px) {
+
+  .position_support{
+      padding-top: 86px;
+  }
+
+}
+
