@@ -71,7 +71,7 @@ function generateMarketplaceLinks(buy_links) {
 
       const markup = img => {
         return `
-          <li>
+          <li class="trading-platform-color">
             <a
               href="${url}" class="modal-book-trading-platform"
               target="_blank"
