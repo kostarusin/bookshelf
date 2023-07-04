@@ -1,10 +1,11 @@
 import { renderTopBooks } from './render-top-books.js';
 import { openModal } from './remote-modal';
+import { toggleLoader } from './loader';
 
 import BookApi from './services.js';
 
 const bookApi = new BookApi();
-
+toggleLoader();
 bookApi
   .getTopBook()
   .then(topBooks => {
@@ -12,7 +13,8 @@ bookApi
   })
   .catch(error => {
     console.log(error);
-  });
+  })
+  .finally(() => toggleLoader('add'));
 
 const allBooksListEl = document.querySelector('.all-book-list');
 
