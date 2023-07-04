@@ -1,4 +1,4 @@
-import array from './static-json-temporary/support_ukraine.json';
+import arrSupport from './static-json-temporary/support_ukraine.json';
 
 
 // let array = [
@@ -52,8 +52,8 @@ import array from './static-json-temporary/support_ukraine.json';
   const divEl =document.querySelector('.slider_line');
   const olEl=document.querySelector('.ol_support');
   
-  function markUpSupportUkraine(){
-    let list = array.map(item => {
+  function markUpSupportUkraine(arrSupport){
+    let list = arrSupport.map(item => {
     let listItem = document.createElement('li');
     listItem.className = 'list';
     listItem.innerHTML = `
@@ -69,7 +69,7 @@ import array from './static-json-temporary/support_ukraine.json';
   });
   
   };
-  markUpSupportUkraine();
+  markUpSupportUkraine(arrSupport);
   let offset=0;
   document.querySelector('.scroll').addEventListener('click',()=>{
       offset+= 100;
