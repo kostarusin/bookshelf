@@ -12,7 +12,7 @@
 
 .slider_line{
   top: 0;
-  height:178px;
+  height:188px;
   position:relative;
   margin: auto 0;
   transition: all ease 1s;
@@ -76,7 +76,7 @@ margin-top: 16px;
 .scroll_svg{
   background: var(  --support-ukraine-font-color);
   border-radius: 50%;
-
+  stroke: #4f2ee8;
 }
 
 .down-scroll {
