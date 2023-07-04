@@ -54,10 +54,12 @@
    border-radius: 18px;
    border: 2px solid var(--font-color-dark);
    background: var(--pop-up-bg-color);
+
    width: 338px;
-   max-height: 99vh;
+   max-height: calc(100% - 40px);
    overflow-y: auto;
    overflow-x: hidden;
+   border: 2px solid;
 }
 
 @media screen and (min-width: 768px) {
