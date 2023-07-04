@@ -18,10 +18,12 @@ export function openModal(bookId) {
     const closeModal = () => {
       console.log('closeModal');
       modalBackdropEl.classList.add('is-hidden');
+
+      closeButton.removeEventListener('click', event1);
+      modalBackdropEl.removeEventListener('click', event2);
+      window.removeEventListener('keydown', event3);
+
       bodyScrollUnlock();
-      removeEventListener('click', event1);
-      removeEventListener('click', event2);
-      removeEventListener('keydown', event3);
     };
 
     const event1 = closeButton.addEventListener('click', () => {
@@ -29,17 +31,17 @@ export function openModal(bookId) {
       closeModal();
     });
 
-    const event2 = document.addEventListener('click', e => {
-      console.log('Click on modal');
+    const event2 = modalBackdropEl.addEventListener('click', e => {
+      console.log('Click on backdrop');
       if (!modal.contains(e.target)) {
         console.log('Close modal');
         closeModal();
       }
     });
 
-    const event3 = document.addEventListener('keydown', e => {
-      console.log('keydown', e.key);
-      if (e.key === 'Escape') {
+    const event3 = window.addEventListener('keydown', e => {
+      console.log('keydown =>', e.code);
+      if (e.code === 'Escape') {
         closeModal();
       }
     });
