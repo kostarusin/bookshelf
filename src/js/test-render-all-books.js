@@ -31,7 +31,7 @@ import { receiveBookByCategory } from './category.js';
   if (bookItem) {
     openModal(bookItem.dataset.bookId);
   }
-});
+
 
 // const bookApi = new BookApi();
 // toggleLoader();
