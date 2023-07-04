@@ -127,18 +127,20 @@ height: 68px;
     position: absolute;
     bottom: 14px;
     right: 14px;
-    background-color: aqua;
+    /* background-color: aqua; */
+    /* fill: #111; */
     /* transform: translate(-50%, -50%); */
 
     display: flex;
     gap: 8px;
+    align-items: center;
 }
 
 .shopping-list-delete-svg{
 display: flex;
 justify-content: center;
 align-items: center;
-background: red;
+/* background: red; */
 position: absolute;
 transform: translate(100%, -100%);
 top: 16px;

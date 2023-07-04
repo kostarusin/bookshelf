@@ -3,6 +3,11 @@ import BookApi from './services';
 const bookApi = new BookApi();
 const books=document.querySelector(".shopping-list-books");
 const categories = bookApi.getBookDetail("643282b1e85766588626a087");
+
+import amazonImg from '../images/marketplaces/amazon.png';
+import appleBooksImg from '../images/marketplaces/apple-books.png';
+import bookshopImg from '../images/marketplaces/bookspop.png';
+
 function GetShop(c,Shopname){
     const link=c
     for (element of c) {
@@ -28,23 +33,17 @@ function MakeHTML({book_image="../images/logo.png",title,list_name,description,a
     <p class="shopping-list-books-item-author">${author}</p>
     <div class="shopping-list-books-item-shops">
         <a href="${GetShop(buy_links,"Amazon")}" class="shopping-list-books-item-amazon-svg">
-            <svg width="32px" height="11px">
-                <use href=""></use>
-            </svg>
+                <img width="32px" height="11px" src="${amazonImg}" loading="lazy" alt="amazon"></img>
         </a>
         <a href="${GetShop(buy_links,"Bookshop")}" class="shopping-list-books-item-orange-book-svg">
-            <svg width="16px" height="16px">
-                <use href=""></use>
-            </svg>
+                <img src="${appleBooksImg}" width="16px" height="16px" loading="lazy" alt="apple Book"></img>
         </a>
         <a href="${GetShop(buy_links,"IndieBound")}" class="shopping-list-books-item-black-book-svg">
-            <svg width="16px" height="16px">
-                <use href=""></use>
-            </svg>
+                <img src="${bookshopImg}" width="16px" height="16px" loading="lazy" alt="book shop"></img>
         </a>
         </div>
         <a class="shopping-list-books-item-delete-svg-button">
-    <svg width="16px" height="16px" class="shopping-list-delete-svg">
+    <svg height="16px" id="Layer_1" class="shopping-list-delete-svg" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="16px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4  L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1  c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1  c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z"/></svg>
         <use href=""></use>
     </svg>
     </a>
@@ -63,8 +62,8 @@ export default class ShoppingListMake{
              visiblePages: 2,
              itemsPerPage: 2,
              template: {
-                 page: '<a href="#" class="tui-page-btn">{{page}}p</a>',
-                 currentPage: '<strong class="tui-page-btn tui-is-selected">{{page}}p</strong>',
+                 page: '<a href="#" class="tui-page-btn">{{page}}</a>',
+                 currentPage: '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
                  moveButton:
                      '<a href="#" class="tui-page-btn tui-{{type}} custom-class-{{type}}">' +
                          '<span class="tui-ico-{{type}}">{{type}}</span>' +
@@ -102,7 +101,7 @@ export default class ShoppingListMake{
         const Items= this.list
         .slice(this.count_of_books*(this.page-1),this.count_of_books*this.page)
         .map(MakeHTML)
-        .join();
+        .join('');
         books.insertAdjacentHTML('beforeend',Items);
     }
     removeByName(name){
@@ -120,7 +119,7 @@ export default class ShoppingListMake{
         const Items= this.list
         .slice(this.count_of_books*(this.page-1),this.count_of_books*this.page)
         .map(MakeHTML)
-        .join();
+        .join('');
         books.insertAdjacentHTML('beforeend',Items);
     }
 }
