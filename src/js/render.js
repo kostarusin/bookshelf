@@ -4,10 +4,13 @@ import './test-modal-book';
 import { renderTopBooks } from './render-top-books.js';
 import { openModal } from './remote-modal';
 import { receiveBookByCategory } from './category.js';
+import { toggleLoader } from './loader';
 
 import BookApi from './services.js';
 
 const bookApi = new BookApi();
+
+toggleLoader();
 
 const allBooksListEl = document.querySelector('.all-book-list');
 const allBooksWrapperEl = document.querySelector('.all-books-wrapper');
@@ -19,7 +22,8 @@ bookApi
   })
   .catch(error => {
     console.log(error);
-  });
+  })
+  .finally(() => toggleLoader('add'));
 
 allBooksListEl.addEventListener('click', e => {
   e.preventDefault();
@@ -39,9 +43,16 @@ allBooksListEl.addEventListener('click', e => {
 });
 
 function openCategoryBooksBlock(category) {
-  bookApi.getBooksByCategory(category).then(data => {
-    allBooksWrapperEl.style.display = 'none';
+  toggleLoader();
+  bookApi
+    .getBooksByCategory(category)
+    .then(data => {
+      allBooksWrapperEl.style.display = 'none';
 
-    receiveBookByCategory(data);
-  });
+      receiveBookByCategory(data);
+    })
+    .catch(error => {
+      console.log(error);
+    })
+    .finally(() => toggleLoader('add'));
 }
