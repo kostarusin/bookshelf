@@ -12,8 +12,12 @@ const bookApi = new BookApi();
 
 toggleLoader();
 
-const allBooksListEl = document.querySelector('.all-book-list');
 const allBooksWrapperEl = document.querySelector('.all-books-wrapper');
+const allBooksListEl = document.querySelector('.all-book-list');
+const allBooksTitleEl = document.querySelector('.all-books-title');
+const categoryBooksWrapperEl = document.querySelector(
+  '.category-books-wrapper'
+);
 
 bookApi
   .getTopBook()
@@ -47,7 +51,10 @@ function openCategoryBooksBlock(category) {
   bookApi
     .getBooksByCategory(category)
     .then(data => {
+      categoryBooksWrapperEl.style.display = 'block';
       allBooksWrapperEl.style.display = 'none';
+      allBooksTitleEl.textContent = '';
+      allBooksListEl.innerHTML = '';
 
       receiveBookByCategory(data);
     })
