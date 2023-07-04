@@ -64,12 +64,14 @@ function createBookCategoryMarkup({ list_name, books }) {
 function createBookCardMarkup(books) {
   return books
     .map(
-      ({ _id, title, author, book_image }) => `
+      ({ _id, title, author, book_image, description }) => `
   <li class="category-book-item swiper-slide" data-book-id="${_id}">
     <a href="#" class="all-books-book-link">
       <div class="all-books-book-image-wrapper">
         <img class="all-books-book-image" src="${book_image}" alt="${title}" loading="lazy"/>
-        <div class="all-books-book-overlay">quick view</div>
+        <div class="all-books-book-overlay">${
+          description ? description : 'No description'
+        }</div>
       </div>
       <h3 class="all-books-book-title">${title}</h3>
       <p class="all-books-book-author">${author}</p>
