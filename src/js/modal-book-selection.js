@@ -23,8 +23,8 @@ export function renderModal(bookDetails) {
         </div>
         ${
           description
-            ? `<p class="modal-book-description">${description}</p>`
-            : `<p class="modal-book-description not-description">No description</p>`
+            ? `<p class="modal-book-description scrollbar">${description}</p>`
+            : `<p class="modal-book-description not-description scrollbar">No description</p>`
         }
       </div>
       <ul class="modal-book-marketplaces">
@@ -34,35 +34,35 @@ export function renderModal(bookDetails) {
   `;
 
   modalContainer.innerHTML = markup;
+}
 
-const closeModal = () => {
-  const backdrop = document.querySelector('.backdrop');
-  const modal = document.querySelector('#modal');
+// const closeModal = () => {
+//   const backdrop = document.querySelector('.backdrop');
+//   const modal = document.querySelector('#modal');
 
-  backdrop.classList.add('is-hidden');
-  modal.classList.remove('is-visible');
-};
+//   backdrop.classList.add('is-hidden');
+//   modal.classList.remove('is-visible');
+// };
 
-const handleClickOutside = (event) => {
-  const modal = document.querySelector('#modal');
+// const handleClickOutside = event => {
+//   const modal = document.querySelector('#modal');
 
-  if (!modal.contains(event.target)) {
-    closeModal();
-  }
-};
+//   if (!modal.contains(event.target)) {
+//     closeModal();
+//   }
+// };
 
-const handleEscapeKey = (event) => {
-  if (event.key === 'Escape') {
-    closeModal();
-  }
-};
+// const handleEscapeKey = event => {
+//   if (event.key === 'Escape') {
+//     closeModal();
+//   }
+// };
 
-const closeButton = document.querySelector('.close');
-closeButton.addEventListener('click', closeModal);
+// const closeButton = document.querySelector('.close');
+// closeButton.addEventListener('click', closeModal);
 
-document.addEventListener('click', handleClickOutside);
-document.addEventListener('keydown', handleEscapeKey);
-
+// document.addEventListener('click', handleClickOutside);
+// document.addEventListener('keydown', handleEscapeKey);
 
 function generateMarketplaceLinks(buy_links) {
   return buy_links
@@ -77,7 +77,7 @@ function generateMarketplaceLinks(buy_links) {
               target="_blank"
               rel="noopener noreferrer"
               >
-                <img height="36" width="36" src="${img}" alt="${name}" loading="lazy"/>
+                <img class="${iconId}" height="36" width="36" src="${img}" alt="${name}" loading="lazy"/>
             </a>
           </li>
         `;
@@ -97,3 +97,6 @@ function generateMarketplaceLinks(buy_links) {
     })
     .join('');
 }
+
+
+

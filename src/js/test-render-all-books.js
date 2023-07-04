@@ -1,12 +1,7 @@
-import { receiveBookByCategory } from './category.js';
 import { renderTopBooks } from './render-top-books.js';
-
-// import topBooks from './static-json-temporary/top_books.json';
-// renderTopBooks(topBooks);
+import { openModal } from './remote-modal';
 
 import BookApi from './services.js';
-
-
 
 const bookApi = new BookApi();
 
@@ -19,13 +14,21 @@ bookApi
     console.log(error);
   });
 
+const allBooksListEl = document.querySelector('.all-book-list');
 
-// bookApi
-//   .getBooksByCategory('Audio Fiction')
-//   .then(category => {
-//     console.log(category);
-//     receiveBookByCategory(category);
-//   })
-//   .catch(err => {
-//     console.log(err);
-//   });
+allBooksListEl.addEventListener('click', e => {
+  e.preventDefault();
+
+  if (e.target.tagName === 'BUTTON') {
+    const category = e.target.closest('.category-item').dataset.category;
+    console.info(
+      `button See More clicked... Go to function view books by category (${category})`
+    );
+  }
+
+  const bookItem = e.target.closest('.category-book-item');
+
+  if (bookItem) {
+    openModal(bookItem.dataset.bookId);
+  }
+});
