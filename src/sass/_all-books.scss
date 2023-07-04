@@ -204,7 +204,7 @@
 // Tablet =======================================
 @media screen and (min-width: 768px) {
   .swiper {
-    width: 702px;
+    width: 100%;
   }
 
   .swiper-btn-prev,
@@ -271,7 +271,7 @@
 // Desktop =======================================
 @media screen and (min-width: 1440px) {
   .swiper {
-    width: 996px;
+    width: 100%;
   }
 
   .all-books-wrapper {
