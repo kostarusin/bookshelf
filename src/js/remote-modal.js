@@ -1,6 +1,8 @@
 import { renderModal } from './modal-book-selection';
 import BookApi from './services.js';
 
+const scrollButton = document.getElementById('scroll-top');
+
 const bookApi = new BookApi();
 
 export function openModal(bookId) {
@@ -16,7 +18,6 @@ export function openModal(bookId) {
     bodyScrollLock();
 
     const closeModal = () => {
-      console.log('closeModal');
       modalBackdropEl.classList.add('is-hidden');
 
       closeButton.removeEventListener('click', event1);
@@ -27,20 +28,16 @@ export function openModal(bookId) {
     };
 
     const event1 = closeButton.addEventListener('click', () => {
-      console.log('Event Close Button Clicked');
       closeModal();
     });
 
     const event2 = modalBackdropEl.addEventListener('click', e => {
-      console.log('Click on backdrop');
       if (!modal.contains(e.target)) {
-        console.log('Close modal');
         closeModal();
       }
     });
 
     const event3 = window.addEventListener('keydown', e => {
-      console.log('keydown =>', e.code);
       if (e.code === 'Escape') {
         closeModal();
       }
@@ -50,7 +47,7 @@ export function openModal(bookId) {
 
 // Body scroll lock function
 function bodyScrollLock() {
-  console.log('bodyScrollLock');
+  scrollButton.classList.remove('show');
 
   const body = document.querySelector('body');
   const bodyStyle = window.getComputedStyle(body);
@@ -66,12 +63,11 @@ function bodyScrollLock() {
 
 // Body scroll unlock function
 function bodyScrollUnlock() {
-  console.log('bodyScrollUnlock');
-
   const body = document.querySelector('body');
 
   setTimeout(() => {
     body.style.overflow = 'auto';
     body.style.paddingRight = '';
+    scrollButton.classList.add('show');
   }, 250);
 }
