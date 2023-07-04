@@ -9,7 +9,7 @@ import arrSupport from './static-json-temporary/support_ukraine.json';
     let listItem = document.createElement('li');
     listItem.className = 'list';
     listItem.innerHTML = `
-      <a class="support_link" href="${item.url}">
+      <a class="support_link" target="_blank" href="${item.url}">
         <img class="image" src="${item.img}" alt="${item.title}"/>
       </a>
     `;

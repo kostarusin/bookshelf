@@ -46,7 +46,9 @@ overflow: hidden;
 
 }
 .support_link{
-  margin-left: 16px;}
+  margin-left: 16px;
+}
+
 .header_support{
 font-weight:700;
 font-size:28px;
