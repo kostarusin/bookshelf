@@ -3,7 +3,18 @@
 width: 335px;
 height: 228px;
 padding-top: 40px;
-overflow: scroll;
+overflow-y: scroll;
+scrollbar-width: thin;
+scrollbar-color: var(--categories-scroll-color) var(--page-background-color);
+}
+
+.container-categories::-webkit-scrollbar-thumb {
+    background-color:var(--categories-scroll-color);
+    border-radius: 20px;
+}
+
+.container-categories::-webkit-scrollbar {
+    width: 8px;
 }
 
 .link-categories {
