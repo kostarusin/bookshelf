@@ -2,7 +2,6 @@ import BookApi from './services.js';
 import { renderTopBooks } from './render-top-books.js';
 import { receiveBookByCategory } from './category.js';
 const bookApi = new BookApi();
-const categories = bookApi.getCategories();
 
 const listCategoriesEl = document.querySelector('.list-categories');
 let activeCategoryEl = document.querySelector('.active-category');
@@ -11,6 +10,10 @@ const categoryBookList = document.querySelector('.category-books-list');
 const categoryTitle = document.querySelector('.category-books-title');
 const allBooksTitleEl = document.querySelector('.all-books-title');
 const allBooksListEl = document.querySelector('.all-book-list');
+const categoryBooksWrapperEl = document.querySelector(
+  '.category-books-wrapper'
+);
+const allBooksWrapperEl = document.querySelector('.all-books-wrapper');
 
 const allBooksWrapperEl = document.querySelector('.all-books-wrapper');
 const categoryBooksWrapperEl = document.querySelector(
@@ -52,7 +55,8 @@ listCategoriesEl.addEventListener('click', event => {
     activeCategoryEl = event.target;
 
     if (event.target.textContent === 'All Categories') {
-      clearCategory();
+      switchBookCategory(true);
+
       bookApi
         .getTopBook()
         .then(topBooks => {
@@ -62,7 +66,8 @@ listCategoriesEl.addEventListener('click', event => {
           console.log(error);
         });
     } else {
-      clearAllCategory();
+      switchBookCategory(false);
+
       bookApi.getBooksByCategory(textCategory).then(categories => {
         receiveBookByCategory(categories);
       });
@@ -70,18 +75,16 @@ listCategoriesEl.addEventListener('click', event => {
   }
 });
 
-function clearCategory() {
-  allBooksWrapperEl.style.display = 'block';
-  categoryBooksWrapperEl.style.display = 'none';
-
-  categoryBookList.innerHTML = '';
-  // categoryTitle.textContent = '';
-}
-
-function clearAllCategory() {
-  allBooksWrapperEl.style.display = 'none';
-  categoryBooksWrapperEl.style.display = 'block';
-
-  allBooksListEl.innerHTML = '';
-  // allBooksTitleEl.textContent = '';
+function switchBookCategory(isAllCategory) {
+  if (isAllCategory) {
+    categoryBooksWrapperEl.style.display = 'none';
+    allBooksWrapperEl.style.display = 'block';
+    categoryTitle.textContent = '';
+    categoryBookList.innerHTML = '';
+  } else {
+    categoryBooksWrapperEl.style.display = 'block';
+    allBooksWrapperEl.style.display = 'none';
+    allBooksTitleEl.textContent = '';
+    allBooksListEl.innerHTML = '';
+  }
 }

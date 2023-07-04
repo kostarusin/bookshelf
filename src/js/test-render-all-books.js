@@ -2,6 +2,9 @@
 // import { openModal } from './remote-modal';
 // import { receiveBookByCategory } from './category.js';
 
+// import { toggleLoader } from './loader';
+
+
 // import BookApi from './services.js';
 
 // const bookApi = new BookApi();
@@ -9,6 +12,8 @@
 // const allBooksListEl = document.querySelector('.all-book-list');
 // const allBooksWrapperEl = document.querySelector('.all-books-wrapper');
 
+// const bookApi = new BookApi();
+// toggleLoader();
 // bookApi
 //   .getTopBook()
 //   .then(topBooks => {
@@ -16,7 +21,9 @@
 //   })
 //   .catch(error => {
 //     console.log(error);
-//   });
+//   })
+//   .finally(() => toggleLoader('add'));
+
 
 // allBooksListEl.addEventListener('click', e => {
 //   e.preventDefault();
