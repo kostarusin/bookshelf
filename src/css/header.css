@@ -65,8 +65,8 @@
 .switch-label:after {
   content: '';
   position: absolute;
-  top: 1.5px;
-  left: 1.5px;
+  top: 1px;
+  left: 1px;
   width: 18px;
   height: 18px;
   background: rgb(255, 255, 255);
@@ -79,12 +79,12 @@
   } */
 
 .switch:checked + .switch-label:after {
-  left: calc(100% - 1.5px);
+  left: calc(100% - 1px);
   transform: translateX(-100%);
 }
 
 .switch-label:active:after {
-  width: 25.5px;
+  width: 26px;
 }
 
 @media (max-width: 767px) {
@@ -287,6 +287,7 @@
   }
   .header-burger {
     display: none;
+    /* filter: var(--amazon-dark-color); */
   }
   .header-mob-menu {
     display: none;
