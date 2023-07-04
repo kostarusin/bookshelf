@@ -23,8 +23,8 @@ export function renderModal(bookDetails) {
         </div>
         ${
           description
-            ? `<p class="modal-book-description">${description}</p>`
-            : `<p class="modal-book-description not-description">No description</p>`
+            ? `<p class="modal-book-description scrollbar">${description}</p>`
+            : `<p class="modal-book-description not-description scrollbar">No description</p>`
         }
       </div>
       <ul class="modal-book-marketplaces">
@@ -77,7 +77,7 @@ function generateMarketplaceLinks(buy_links) {
               target="_blank"
               rel="noopener noreferrer"
               >
-                <img height="36" width="36" src="${img}" alt="${name}" loading="lazy"/>
+                <img class="${iconId}" height="36" width="36" src="${img}" alt="${name}" loading="lazy"/>
             </a>
           </li>
         `;
@@ -97,3 +97,6 @@ function generateMarketplaceLinks(buy_links) {
     })
     .join('');
 }
+
+
+
