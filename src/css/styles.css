@@ -85,6 +85,7 @@ img {
 
 body {
   font-family: 'DM Sans', sans-serif;
+  background-color: var(--page-background-color);
 }
 
 .container {
