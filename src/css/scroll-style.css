@@ -8,12 +8,13 @@
 }
 
 .scrollbar::-webkit-scrollbar-track {
-   background-color: none;
+   background-color: transparent;
 }
 
 .scrollbar::-webkit-scrollbar-thumb {
    background-color: #E0E0E0;
    border-radius: 12px;
+   max-height: 30vh;
 }
 
 .scrollbar::-webkit-scrollbar-thumb:hover {
