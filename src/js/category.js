@@ -1,29 +1,34 @@
 // функція яка буде рендерити картку для пошуку за категоріями
 import Notiflix from 'notiflix';
 import BookApi from './services.js';
+import { openModal } from './remote-modal';
+import { renderModal } from './modal-book-selection';
+
+
 const bookApi = new BookApi();
 
 
 const categoryBookList = document.querySelector('.category-books-list');
 const categoryTitle = document.querySelector('.category-books-title');
-const buttonSeeMore = document.querySelector('.see-more__button');
 
 function createBookCard(books) {
     console.log(books);
   const booksCard = books
-      .map(({ author, title, book_image, description }) => {
+    .map(({ _id, author, title, book_image, description }) => {
       return `
-        <div class="book-card">
+        <li class="book-card" data-book-id="${_id}">
             <a href="#" class="book-link">
+            <div class="overlay-wrapper">
             <img class="book-image-category" src="${book_image}" alt="${title}" loading="lazy"/>
+            <div class="book-overlay">${description}</div>
+            </div>
             <h2 class="book-title">${title}</h2>
             <p class="author">${author}</p>
-            <div class="book-overlay">${description}</div>
             </a>
-        </div>
+        </li>
     `;
     })
-    .join('');
+    .join('');  
 
     return booksCard;
 }
@@ -46,8 +51,12 @@ export function receiveBookByCategory(selectedCategory) {
     categoryBookList.innerHTML = createBookCard(selectedCategory);
 }
 
-// buttonSeeMore.addEventListener('click', showCategory);
+categoryBookList.addEventListener('click', e => {
+    e.preventDefault();
 
-// function showCategory(e) {
-//     e.preventDefault();
-// }
+    const targetBook = e.target.closest('.book-card');
+    console.log(targetBook);
+    if (targetBook) {
+        openModal(targetBook.dataset.bookId) 
+    }
+});
