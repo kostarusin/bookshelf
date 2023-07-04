@@ -22,13 +22,27 @@
   align-items: center;
   flex-shrink: 0;
 }
+/* .span-header {
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 1.02;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: black;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 8px;
+} */
 .logo-name-header {
+  fill: black;
   margin-left: 8px;
 }
-.logo-name-header:hover,
+/* .logo-name-header:hover,
 .logo-name-header:focus {
   fill: var(--header-background-color);
-}
+} */
 
 /* !=============================== */
 .switch {
@@ -167,7 +181,8 @@
     border-radius: 36px;
   }
   .header-item:hover,
-  .header-item:focus {
+  .header-item:focus,
+  .header-item:active {
     background: #eac645;
   }
 
@@ -192,18 +207,22 @@
     display: flex;
     align-items: center;
     letter-spacing: -0.56px;
-    color: var(--font-color-dark);
+    color: black;
     text-transform: uppercase;
   }
 
   .logo-head-icon {
-    stroke: var(--header-border-color);
-    fill: var(--header-background-color);
+    stroke: black;
+    fill: var(--support-ukraine-font-color);
     margin-left: 4px;
   }
   .logo-head-icon:hover,
-  .logo-head-icon:focus {
+  .logo-head-icon:focus,
+  .logo-head-icon:active {
     fill: #eac645;
+  }
+  .link-current {
+    background-color: #eac645;
   }
 
   /* .header-cont-pre {
@@ -217,14 +236,14 @@
   }
 
   .header-user {
-    background-color: var(--font-color-selected);
+    background-color: #4f2ee8;
     border-color: transparent;
     border-radius: 36px;
     margin-left: 24px;
   }
 
   .header-user-link {
-    color: var(--header-background-color);
+    color: var(--support-ukraine-font-color);
     font-size: 22px;
     font-weight: 700;
     line-height: normal;
@@ -240,7 +259,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--header-background-color);
+    background-color: var(--support-ukraine-font-color);
     margin-right: 9px;
     margin-left: 12px;
   }
@@ -250,8 +269,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--font-color-selected);
-    fill: var(--header-background-color);
+    background-color: #4f2ee8;
+    fill: var(--support-ukraine-font-color);
     width: 23px;
     height: 26px;
     flex-shrink: 0;
