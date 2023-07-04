@@ -13,7 +13,7 @@
     overflow: hidden;
 }
 
-.modal {
+.modal-window {
     position: absolute;
     padding: 40px 20px;
     top: 50%;
@@ -41,13 +41,14 @@
 .modal-close-icon {
     width: 20px;
     height: 20px;
+   
 }
 
-/* .backdroped.is-hidden .modal {
+.backdroped.is-hidden .modal {
     transform: translate(-50%, -50%) scale(0);
-}  */
+}  
 
- .is-hidden {
+ .is-hiddens {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
