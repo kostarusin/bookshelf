@@ -75,7 +75,7 @@ function clearCategory() {
   categoryBooksWrapperEl.style.display = 'none';
 
   categoryBookList.innerHTML = '';
-  categoryTitle.textContent = '';
+  // categoryTitle.textContent = '';
 }
 
 function clearAllCategory() {
@@ -83,5 +83,5 @@ function clearAllCategory() {
   categoryBooksWrapperEl.style.display = 'block';
 
   allBooksListEl.innerHTML = '';
-  allBooksTitleEl.textContent = '';
+  // allBooksTitleEl.textContent = '';
 }
