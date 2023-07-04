@@ -30,7 +30,7 @@ overflow: hidden;
   line-height:1.28;
   letter-spacing:-4%;
   margin-top:40px;
-
+ 
 }
 .list::before {
   content: '0'counter(item);
@@ -111,6 +111,8 @@ padding-left: 152px;
       letter-spacing:-4%;
       margin-top:40px;
     
+
+
 }
 .scroll{
   padding-left: 149px;

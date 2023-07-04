@@ -24,28 +24,28 @@ import arrSupport from './static-json-temporary/support_ukraine.json';
   markUpSupportUkraine();
   let offset=0;
   document.querySelector('.scroll').addEventListener('click',()=>{
-      offset+= 100;
-      document.querySelector('.scroll-up').classList.remove("visually-hidden") 
+      offset+= 50;
+      //document.querySelector('.scroll-up').classList.remove("visually-hidden") 
       if(offset>300){
-        offset=300;
-       document.querySelector('.scroll').classList.add("visually-hidden")
+        offset=0;
+       //document.querySelector('.scroll').classList.add("visually-hidden")
        
       }
-        divEl.style.top=-offset+'px'
+        divEl.style.top= -offset+'px';
     });
     
     document.querySelector('.scroll-up').addEventListener('click',()=>{
-      offset-= 100;
-      document.querySelector('.scroll').classList.add("visually-hidden") 
+      offset-= 50;
+      //document.querySelector('.scroll').classList.add("visually-hidden") 
   
-    if(offset<300 ){   
-      offset=0; 
-      document.querySelector('.scroll-up').classList.add("visually-hidden");
+    if(offset<0 ){   
+      offset=300; 
+     
     //document.querySelector('.scroll-up').classList.add("visually-hidden"); 
-    document.querySelector('.scroll').classList.remove("visually-hidden");
+   // document.querySelector('.scroll').classList.remove("visually-hidden");
   }
-     divEl.style.top=-offset+'px';
+     divEl.style.top= -offset+'px';
       });
     
-  
+
   
