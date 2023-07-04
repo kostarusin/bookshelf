@@ -55,6 +55,7 @@ listCategoriesEl.addEventListener('click', event => {
     activeCategoryEl = event.target;
 
     if (event.target.textContent === 'All Categories') {
+      toggleLoader();
       switchBookCategory(true);
 
       bookApi
@@ -67,6 +68,7 @@ listCategoriesEl.addEventListener('click', event => {
         })
         .finally(() => toggleLoader('add'));
     } else {
+      toggleLoader();
       switchBookCategory(false);
 
       bookApi
