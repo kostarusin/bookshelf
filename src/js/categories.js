@@ -10,11 +10,6 @@ const categoryBookList = document.querySelector('.category-books-list');
 const categoryTitle = document.querySelector('.category-books-title');
 const allBooksTitleEl = document.querySelector('.all-books-title');
 const allBooksListEl = document.querySelector('.all-book-list');
-const categoryBooksWrapperEl = document.querySelector(
-  '.category-books-wrapper'
-);
-const allBooksWrapperEl = document.querySelector('.all-books-wrapper');
-
 const allBooksWrapperEl = document.querySelector('.all-books-wrapper');
 const categoryBooksWrapperEl = document.querySelector(
   '.category-books-wrapper'
