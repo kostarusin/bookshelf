@@ -12,7 +12,6 @@
   display: flex;
   align-items: center;
   margin-right: auto;
-  /* margin-left: 20px; */
 }
 
 .header-logo {
@@ -21,6 +20,8 @@
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
+  margin-top: 22px;
+  margin-bottom: 22px;
 }
 /* .span-header {
   font-weight: 800;
@@ -36,13 +37,9 @@
   margin-left: 8px;
 } */
 .logo-name-header {
-  fill: black;
-  margin-left: 8px;
+  fill: var(--header-border-color);
+  padding-left: 8px;
 }
-/* .logo-name-header:hover,
-.logo-name-header:focus {
-  fill: var(--header-background-color);
-} */
 
 /* !=============================== */
 .switch {
@@ -108,7 +105,7 @@
     position: fixed;
     top: 0;
     right: 0;
-    width: 60%;
+    width: 100%;
     height: 100%;
     z-index: 100;
     background-color: var(--cards-background-color);
@@ -141,7 +138,7 @@
     align-items: center;
     justify-content: center;
     background-color: transparent;
-    fill: var(--header-border-color);
+    stroke: var(--header-border-color);
   }
 
   .header-user,
@@ -158,7 +155,6 @@
 @media (min-width: 768px) {
   .header-nav {
     justify-content: space-between;
-    /* margin-left: 32px; */
   }
 
   .header-logo {
@@ -197,6 +193,7 @@
     color: var(--font-color-dark);
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     text-transform: uppercase;
+    padding: 8px 16px;
   }
 
   .header-to-link {
@@ -209,12 +206,13 @@
     letter-spacing: -0.56px;
     color: var(--font-color-dark);
     text-transform: uppercase;
+    padding: 7px 16px;
   }
 
   .logo-head-icon {
-    stroke: black;
+    stroke: var(--header-border-color);
     fill: var(--support-ukraine-font-color);
-    margin-left: 4px;
+    padding-left: 4px;
   }
   .logo-head-icon:hover,
   .logo-head-icon:focus,
@@ -224,10 +222,6 @@
   .link-current {
     background-color: #eac645;
   }
-
-  /* .header-cont-pre {
-    margin-right: 32px;
-  } */
 
   .header-team-user {
     display: flex;
@@ -252,6 +246,8 @@
     letter-spacing: -0.44px;
     display: flex;
     align-items: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
 
   .icon-user-header {
@@ -262,6 +258,7 @@
     justify-content: center;
     align-items: center;
     background-color: var(--support-ukraine-font-color);
+    padding: 9px 9px;
     margin-right: 9px;
     margin-left: 12px;
   }
