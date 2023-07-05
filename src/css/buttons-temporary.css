@@ -69,3 +69,69 @@
   width: 28px;
   height: 28px;
 }
+
+/* Mobile-menu buttons */
+
+.back-to-home-button {
+  display: block;
+  margin-left: 129px;
+  margin-right: 174px;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.29;
+  text-transform: uppercase;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+    background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+
+.back-to-home-button:hover,
+.back-to-home-button:focus,
+.back-to-home-button:active {
+  color: var(--font-color-dark);
+  background-color: var(--font-color-selected);
+  padding: 8px 16px;
+  border-radius: 36px;
+}
+
+.back-to-shoping-list-btn {
+  background-color: transparent;
+  border: none;
+  transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+    background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+
+.back-to-shoping-list-btn-icon {
+  stroke: #f6f6f6;
+}
+
+.back-to-shoping-list-link {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+}
+
+.back-to-shoping-list-link:hover,
+.back-to-shoping-list-link:focus,
+.back-to-shoping-list-link:active {
+  color: var(--font-color-dark);
+  background-color: var(--font-color-selected);
+  border-radius: 36px;
+  padding: 8px 16px;
+}
+
+.back-to-shoping-list-link:hover .back-to-shoping-list-btn-icon,
+.back-to-shoping-list-link:focus .back-to-shoping-list-btn-icon,
+.back-to-shoping-list-link:active .back-to-shoping-list-btn-icon {
+  stroke: var(--font-color-dark);
+}

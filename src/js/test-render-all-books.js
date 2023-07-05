@@ -1,83 +1,73 @@
-import { receiveBookByCategory } from './category.js';
-import { renderTopBooks } from './render-top-books.js';
-import { renderModal } from './modal-book-selection';
+// import { renderTopBooks } from './render-top-books.js';
+// import { openModal } from './remote-modal';
+// import { receiveBookByCategory } from './category.js';
+
 
 import BookApi from './services.js';
+import { receiveBookByCategory } from './category.js';
 
-const bookApi = new BookApi();
+// import { toggleLoader } from './loader';
 
-bookApi
-  .getTopBook()
-  .then(topBooks => {
-    renderTopBooks(topBooks);
-  })
-  .catch(error => {
-    console.log(error);
-  });
 
-const allBooksListEl = document.querySelector('.all-book-list');
 
-const modalBackdropEl = document.querySelector('.backdrop');
+// import BookApi from './services.js';
 
-// ============================================================================
-allBooksListEl.addEventListener('click', e => {
-  e.preventDefault();
+// const bookApi = new BookApi();
+
+// const allBooksListEl = document.querySelector('.all-book-list');
+// const allBooksWrapperEl = document.querySelector('.all-books-wrapper');
+
 
   if (e.target.tagName === 'BUTTON') {
-    const category = e.target.closest('.category-item').dataset.category;
+    const category = e.target.closest('.all-books-category-item').dataset
+      .category;
     console.info(
       `button See More clicked... Go to function view books by category (${category})`
     );
   }
 
   const bookItem = e.target.closest('.category-book-item');
-
+  console.log(bookItem);
   if (bookItem) {
     openModal(bookItem.dataset.bookId);
   }
-});
-// ============================================================================
 
-function openModal(bookId) {
-  bookApi.getBookDetail(bookId).then(bookDetails => {
-    renderModal(bookDetails);
 
-    modalBackdropEl.classList.remove('is-hidden');
-
-    const closeButton = modalBackdropEl.querySelector('.close');
-    const modal = modalBackdropEl.querySelector('#modal');
-
-    const closeModal = () => {
-      modalBackdropEl.classList.add('is-hidden');
-      removeEventListener('click', event1);
-      removeEventListener('click', event2);
-      removeEventListener('keydown', event3);
-    };
-
-    const event1 = closeButton.addEventListener('click', () => {
-      closeModal();
-    });
-
-    const event2 = document.addEventListener('click', e => {
-      if (!modal.contains(e.target)) {
-        closeModal();
-      }
-    });
-
-    const event3 = document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') {
-        closeModal();
-      }
-    });
-  });
-}
-
+// const bookApi = new BookApi();
+// toggleLoader();
 // bookApi
-//   .getBooksByCategory('Audio Fiction')
-//   .then(category => {
-//     console.log(category);
-//     receiveBookByCategory(category);
+//   .getTopBook()
+//   .then(topBooks => {
+//     renderTopBooks(topBooks);
 //   })
-//   .catch(err => {
-//     console.log(err);
+//   .catch(error => {
+//     console.log(error);
+//   })
+//   .finally(() => toggleLoader('add'));
+
+
+// allBooksListEl.addEventListener('click', e => {
+//   e.preventDefault();
+
+//   if (e.target.tagName === 'BUTTON') {
+//     const category = e.target.closest('.all-books-category-item').dataset
+//       .category;
+
+//     openCategoryBooksBlock(category);
+//   }
+
+//   const bookItem = e.target.closest('.category-book-item');
+
+//   if (bookItem) {
+//     openModal(bookItem.dataset.bookId);
+//   }
+// });
+
+// function openCategoryBooksBlock(category) {
+//   bookApi.getBooksByCategory(category).then(data => {
+//     allBooksWrapperEl.style.display = 'none';
+
+//     receiveBookByCategory(data);
 //   });
+// }
+
