@@ -56,6 +56,7 @@ export function openModal(bookId) {
       });
 
       const event4 = addToShoppingListBtn.addEventListener('click', () => {
+        console.log('Book Details', bookDetails._id);
         remoteShoppingList(bookDetails);
       });
     })
