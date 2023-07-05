@@ -30,8 +30,8 @@
      border: 0;
      background: transparent;
      cursor: pointer;
-     left: 89%;
-     top: 3%;
+     left: 92%;
+     top: 2%;
      stroke: var(--font-color-dark);
      fill: var(--font-color-dark);
      color: var(--font-color-dark);
@@ -53,6 +53,7 @@
      visibility: hidden;
      pointer-events: none;
      overflow: hidden;
+     z-index: 1000;
  }
 
  .just-form {
