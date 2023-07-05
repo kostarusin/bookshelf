@@ -1,8 +1,11 @@
 
+.section-categories {
+padding-top: 40px;
+}
+
 .container-categories {
 width: 335px;
 height: 228px;
-padding-top: 40px;
 overflow-y: scroll;
 scrollbar-width: thin;
 scrollbar-color: var(--categories-scroll-color) var(--page-background-color);
