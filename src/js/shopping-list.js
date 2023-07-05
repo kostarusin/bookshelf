@@ -11,7 +11,7 @@ import Trash from '../images/sprite.svg#icon-modal-close-btn-black';
 
 function GetShop(c,Shopname){
     const link=c
-    for (var element of c) {
+    for (element of c) {
         if (element.name==Shopname)
         return element.url;
       }
