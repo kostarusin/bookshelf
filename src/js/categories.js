@@ -6,7 +6,7 @@ import { toggleLoader } from './loader';
 const bookApi = new BookApi();
 
 const listCategoriesEl = document.querySelector('.list-categories');
-let activeCategoryEl = document.querySelector('.active-category');
+// let activeCategoryEl = document.querySelector('.active-category');
 
 const categoryBookList = document.querySelector('.category-books-list');
 const categoryTitle = document.querySelector('.category-books-title');
@@ -43,9 +43,11 @@ bookApi
 listCategoriesEl.addEventListener('click', event => {
   event.preventDefault();
 
+  let activeCategoryEl = document.querySelector('.active-category');
+
   if (event.target.nodeName === 'A') {
     const textCategory = event.target.textContent;
-    console.log(textCategory);
+    // console.log(textCategory);
     if (activeCategoryEl === event.target) {
       return;
     }
