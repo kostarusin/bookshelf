@@ -4,7 +4,7 @@
 }
 .section_support{
   background:var(--support-ukraine-modal-menu-background);
-  width: 335px;
+  max-width: 335px;
   height:352px;
   border-radius: 16px;
   margin: 0 auto;
