@@ -19,8 +19,9 @@
   },
   "dependencies": {
     "modern-normalize": "^1.1.0",
-    "notiflix": "^3.2.6",
-    "swiper": "^9.4.1"
+    "swiper": "^9.4.1",
+    "tui-pagination": "^3.4.1",
+    "notiflix": "^3.2.6"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
