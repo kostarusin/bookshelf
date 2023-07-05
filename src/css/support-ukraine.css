@@ -41,24 +41,24 @@ overflow: hidden;
   display: flex;
   align-items: center;
   margin-bottom: 20px;
-  width: 159px;
+  max-width: 159px;
   height: 32px;
 
 }
-.support_link{
-  margin-left: 16px;
+.image{
+
+display: flex;
+
 }
 
 .header_support{
-font-weight:700;
-font-size:28px;
 line-height:1.14;
 letter-spacing:-4%;
-padding-left: 40px;
 padding-top: 24px;
 color:rgba(255, 255, 255, 1);
 display: flex;
 gap:12px;
+padding-left: 40px;
 }
 
 .scroll{

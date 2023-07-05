@@ -2,7 +2,7 @@ import arrSupport from './static-json-temporary/support_ukraine.json';
 
  const divEl =document.querySelector('.slider_line');
   const olEl=document.querySelector('.ol_support');
-  console.log(divEl,olEl)
+
   function markUpSupportUkraine(){
     let list = arrSupport.map(item => {
     let listItem = document.createElement('li');
@@ -21,8 +21,8 @@ import arrSupport from './static-json-temporary/support_ukraine.json';
   markUpSupportUkraine();
   let offset=0;
   document.querySelector('.scroll').addEventListener('click',()=>{
-      offset+= 100;
-      if(offset>200){
+      offset+= 150;
+      if(offset>300){
         offset=0;
        }
         divEl.style.top= -offset+'px';
