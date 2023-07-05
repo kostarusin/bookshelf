@@ -4,8 +4,7 @@
   justify-content: space-between;
   background-color: var(--header-background-color);
   border-radius: 0 0 8px 8px;
-  border-color: var(--header-border-color);
-  border: 1.5px solid;
+  border: 1.5px solid  var(--header-border-color);
   min-width: 320px;
 }
 .header-nav {
