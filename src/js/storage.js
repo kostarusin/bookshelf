@@ -1,43 +1,47 @@
 export default class ShoppingList {
   #KEY = 'shopping-list';
+  #shoppingList = [];
 
   constructor() {
     this.#init();
   }
 
   #init() {
-    const shoppingList = JSON.parse(localStorage.getItem(this.#KEY));
+    this.#shoppingList = JSON.parse(localStorage.getItem(this.#KEY));
 
-    if (!shoppingList) {
+    if (!this.#shoppingList) {
       localStorage.setItem(this.#KEY, '[]');
     }
   }
 
   setBook(book) {
-    console.log('setBook', book._id);
+    this.#shoppingList = JSON.parse(localStorage.getItem(this.#KEY));
+    this.#shoppingList.push(book);
 
-    const shoppingList = JSON.parse(localStorage.getItem(this.#KEY));
-    shoppingList.push(book);
-
-    localStorage.setItem(this.#KEY, JSON.stringify(shoppingList));
+    localStorage.setItem(this.#KEY, JSON.stringify(this.#shoppingList));
   }
 
   removeBook(bookId) {
-    console.log('removeBook');
+    this.#shoppingList = JSON.parse(localStorage.getItem(this.#KEY));
 
-    const shoppingList = JSON.parse(localStorage.getItem(this.#KEY));
-    shoppingList.splice(
-      shoppingList.findIndex(book => book.id === bookId),
+    const deleteBook = this.#shoppingList.splice(
+      this.#shoppingList.findIndex(book => {
+        return book._id === bookId;
+      }),
       1
     );
 
-    localStorage.setItem(this.#KEY, JSON.stringify(shoppingList));
+    if (deleteBook) {
+      localStorage.setItem(this.#KEY, JSON.stringify(this.#shoppingList));
+    }
+
+    return deleteBook.length > 0 ? true : false;
   }
 
   findBook(bookId) {
-    const shoppingList = JSON.parse(localStorage.getItem(this.#KEY));
+    this.#shoppingList = JSON.parse(localStorage.getItem(this.#KEY));
 
-    const isBookAdded = shoppingList.find(book => {
+    const isBookAdded = this.#shoppingList.find(book => {
       return book._id === bookId;
     });
 

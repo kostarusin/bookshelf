@@ -18,11 +18,30 @@ const modalMessage = modal.querySelector(
   '.modal-book-shopping-list-btn-shopping-list-message'
 );
 
+let currentBook;
+
+addToShoppingListBtn.addEventListener('click', () => {
+  remoteShoppingList(currentBook);
+});
+
 export function openModal(bookId) {
   bookApi
     .getBookDetail(bookId)
     .then(bookDetails => {
+      currentBook = bookDetails;
       renderModal(bookDetails);
+
+      const isBookAdded = shoppingList.findBook(bookDetails._id);
+
+      if (isBookAdded) {
+        addToShoppingListBtn.textContent = 'Remove from shopping list';
+        addToShoppingListBtn.dataset.isAdd = 'true';
+        modalMessage.classList.remove('message-hide');
+      } else {
+        addToShoppingListBtn.textContent = 'Add to shopping list';
+        addToShoppingListBtn.dataset.isAdd = 'false';
+        modalMessage.classList.add('message-hide');
+      }
 
       modalBackdropEl.classList.remove('is-hidden');
 
@@ -34,7 +53,6 @@ export function openModal(bookId) {
         closeButton.removeEventListener('click', event1);
         modalBackdropEl.removeEventListener('click', event2);
         window.removeEventListener('keydown', event3);
-        addToShoppingListBtn.removeEventListener('click', event4);
 
         bodyScrollUnlock();
       };
@@ -54,26 +72,29 @@ export function openModal(bookId) {
           closeModal();
         }
       });
-
-      const event4 = addToShoppingListBtn.addEventListener('click', () => {
-        console.log('Book Details', bookDetails._id);
-        remoteShoppingList(bookDetails);
-      });
     })
     .catch(error => {
       console.log(error);
     });
 }
 
-function remoteShoppingList(bookDetails) {
-  if (addToShoppingListBtn.textContent === 'Added to shopping list') {
-    console.log('Added to shopping list', bookDetails._id);
-    return;
-  }
+function remoteShoppingList(book) {
+  if (addToShoppingListBtn.dataset.isAdd === 'true') {
+    const isRemoveBook = shoppingList.removeBook(book._id);
 
-  shoppingList.setBook(bookDetails);
-  addToShoppingListBtn.textContent = 'Added to shopping list';
-  modalMessage.classList.remove('message-hide');
+    if (isRemoveBook) {
+      addToShoppingListBtn.textContent = 'add to shopping list';
+      addToShoppingListBtn.dataset.isAdd = 'false';
+      modalMessage.classList.add('message-hide');
+    }
+
+    return;
+  } else {
+    shoppingList.setBook(book);
+    addToShoppingListBtn.textContent = 'remove from the shopping list';
+    addToShoppingListBtn.dataset.isAdd = 'true';
+    modalMessage.classList.remove('message-hide');
+  }
 }
 
 // Body scroll lock function
