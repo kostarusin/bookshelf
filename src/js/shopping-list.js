@@ -152,9 +152,9 @@ categories.then(getd=>i=getd).finally(()=>{
        const LI_of_book=event.target.closest('li').getAttribute("name")
         if(event.target.nodeName==="svg" || event.target.nodeName==="path"){
             console.log("Delete "+LI_of_book);
-            Make.removeByName(LI_of_book);
-            Make.Set_Plagination();
-            console.log(Make.list)
+           // Make.removeByName(LI_of_book);
+           // Make.Set_Plagination();
+           // console.log(Make.list)
         }
         else
         console.log("Click on "+LI_of_book);
