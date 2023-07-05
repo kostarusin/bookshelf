@@ -1,11 +1,33 @@
 import amazonImg from '../images/marketplaces/amazon.png';
 import appleBooksImg from '../images/marketplaces/apple-books.png';
 import bookshopImg from '../images/marketplaces/bookspop.png';
+import ShoppingList from './storage';
 
 const modalContainer = document.querySelector('.modal-book-content-wrap');
+const addToShoppingListBtn = modal.querySelector(
+  '.modal-book-shopping-list-btn'
+);
+const modalMessage = modal.querySelector(
+  '.modal-book-shopping-list-btn-shopping-list-message'
+);
+
+const shoppingList = new ShoppingList();
 
 export function renderModal(bookDetails) {
-  const { book_image, title, author, description, buy_links } = bookDetails;
+  const { _id, book_image, title, author, description, buy_links } =
+    bookDetails;
+
+  const isBookAdded = shoppingList.findBook(_id);
+
+  console.log(isBookAdded);
+
+  if (isBookAdded) {
+    addToShoppingListBtn.textContent = 'Remove from shopping list';
+    modalMessage.classList.remove('message-hide');
+  } else {
+    addToShoppingListBtn.textContent = 'Add to shopping list';
+    modalMessage.classList.add('message-hide');
+  }
 
   const markup = `
     <img
@@ -97,6 +119,3 @@ function generateMarketplaceLinks(buy_links) {
     })
     .join('');
 }
-
-
-
