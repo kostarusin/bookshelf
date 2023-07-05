@@ -101,7 +101,7 @@
     background-color: transparent;
     margin-left: 14px;
   }
-  
+
   .icon-burger-menu {
     stroke: var(--header-border-color);
     fill: var(--header-border-color);
@@ -278,4 +278,34 @@
   .site-nav-header .header-item + .header-item {
     margin-left: 24px;
   }
+}
+
+/* Book counter */
+
+.header-to-link {
+  position: relative;
+}
+
+.header-book-count {
+  position: absolute;
+  left: 118px;
+  top: 18px;
+
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 100px;
+  border: 1px solid #111;
+  background: #eac645;
+
+  text-align: center;
+  font-size: 7px;
+  font-weight: 700;
+  line-height: 6px;
+  letter-spacing: -0.24px;
+
+  color: #111;
 }
