@@ -56,10 +56,25 @@ function openCategoryBooksBlock(category) {
       allBooksTitleEl.textContent = '';
       allBooksListEl.innerHTML = '';
 
+      setActiveCategory(category);
       receiveBookByCategory(data);
     })
     .catch(error => {
       console.log(error);
     })
     .finally(() => toggleLoader('add'));
+}
+
+function setActiveCategory(category) {
+  const categoryList = document.querySelector('.list-categories').children;
+
+  categoryList[0].firstElementChild.classList.remove('active-category');
+
+  const arr = Array.from(categoryList);
+
+  arr.find((el, ind) => {
+    if (el.firstElementChild.textContent === category) {
+      categoryList[ind].firstElementChild.classList.add('active-category');
+    }
+  });
 }
