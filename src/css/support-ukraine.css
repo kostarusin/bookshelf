@@ -4,12 +4,11 @@
 }
 .section_support{
   background:var(--support-ukraine-modal-menu-background);
-  width: 335px;
+  max-width: 335px;
   height:352px;
   border-radius: 16px;
   margin: 0 auto;
 }
-
 .slider_line{
   top: 0;
   height:188px;
@@ -41,24 +40,18 @@ overflow: hidden;
   display: flex;
   align-items: center;
   margin-bottom: 20px;
-  width: 159px;
+  max-width: 159px;
   height: 32px;
-
+  gap: 16px;
 }
-.support_link{
-  margin-left: 16px;
-}
-
 .header_support{
-font-weight:700;
-font-size:28px;
 line-height:1.14;
 letter-spacing:-4%;
-padding-left: 40px;
 padding-top: 24px;
 color:rgba(255, 255, 255, 1);
 display: flex;
 gap:12px;
+padding-left: 40px;
 }
 
 .scroll{
@@ -66,41 +59,21 @@ position: absolute;
 padding-left: 152px;
 padding-bottom: 20px;
 margin-top: 16px;
+cursor: pointer;
 }
-.scroll-up{
-  position: absolute;
-  padding-left: 120px;
-  padding-bottom: 20px;
-  margin-top: 16px;
-  }
 .scroll_svg{
   background: var(  --support-ukraine-font-color);
   border-radius: 50%;
-  stroke: #4f2ee8;
 }
-
-.down-scroll {
-position: fixed;
-padding-left: 152px;
-}
-
-
 /* ================ Tablet ====================== */
 @media screen and (min-width: 768px) {
-
-  .position_support{
-      padding-top: 40px;
-  }
   .section_support{
       width: 335px;
       height:472px;
-    
   }
-  
   .slider_line{
       height:292px;   
   }
-
   .ol_support{
       list-style-type: none;
       counter-reset: item;
@@ -110,27 +83,17 @@ padding-left: 152px;
       line-height:1.28;
       letter-spacing:-4%;
       margin-top:40px;
-    
-
-
 }
 .scroll{
   padding-left: 149px;
   padding-bottom: 14px;
   margin-top: 32px;
   }
-  .scroll-up{
-      padding-left: 120px;
-      padding-bottom: 14px;
-      margin-top: 32px;  
-  }
 }
 /* ================ Desctop ====================== */
 @media screen and (min-width: 1440px) {
-
-  .position_support{
+.position_support{
       padding-top: 86px;
   }
-
 }
 
