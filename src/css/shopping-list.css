@@ -374,3 +374,8 @@ right: 16px;
 .tui-prev{
     background-color: #EAC645;
 }
+
+
+.shopping-list-amazon{
+filter: var(--amazon-dark-color);
+}

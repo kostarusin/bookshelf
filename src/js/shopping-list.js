@@ -7,6 +7,7 @@ const categories = bookApi.getBookDetail("643282b1e85766588626a087");
 import amazonImg from '../images/marketplaces/amazon.png';
 import appleBooksImg from '../images/marketplaces/apple-books.png';
 import bookshopImg from '../images/marketplaces/bookspop.png';
+import Trash from '../images/sprite.svg#icon-modal-close-btn-black';
 
 function GetShop(c,Shopname){
     const link=c
@@ -18,7 +19,7 @@ function GetShop(c,Shopname){
 function MakeHTML({book_image="../images/logo.png",title,list_name,description,author,buy_links}){
     //console.log(c);
     const html= 
-    `<li class="shopping-list-books-item">
+    `<li class="shopping-list-books-item" name="${title}">
     <div class="shopping-list-books-item-img-div">
     <img src="${book_image}" alt="${title}" class="shopping-list-books-item-img">
     </div>
@@ -32,7 +33,7 @@ function MakeHTML({book_image="../images/logo.png",title,list_name,description,a
     </div>
     <p class="shopping-list-books-item-author">${author}</p>
     <div class="shopping-list-books-item-shops">
-        <a href="${GetShop(buy_links,"Amazon")}" class="shopping-list-books-item-amazon-svg">
+        <a href="${GetShop(buy_links,"Amazon")}" class="shopping-list-books-item-amazon-svg shopping-list-amazon">
                 <img width="32px" height="11px" src="${amazonImg}" loading="lazy" alt="amazon"></img>
         </a>
         <a href="${GetShop(buy_links,"Bookshop")}" class="shopping-list-books-item-orange-book-svg">
@@ -42,13 +43,14 @@ function MakeHTML({book_image="../images/logo.png",title,list_name,description,a
                 <img src="${bookshopImg}" width="16px" height="16px" loading="lazy" alt="book shop"></img>
         </a>
         </div>
-        <a class="shopping-list-books-item-delete-svg-button">
-    <svg height="16px" id="Layer_1" class="shopping-list-delete-svg" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="16px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4  L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1  c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1  c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z"/></svg>
-        <use href=""></use>
+        <button class="shopping-list-books-item-delete-svg-button" type="button">
+    <svg height="16px" class="shopping-list-delete-svg" width="16px">
+        <use href="${Trash}"/>
     </svg>
-    </a>
+    </button>
 </div>
 </li>`
+//console.log(Trash);
 return html;
 }
 
@@ -143,4 +145,19 @@ categories.then(getd=>i=getd).finally(()=>{
         
     });
     Make.MakeToPage(1);
+
+    books.addEventListener('click', event => {
+        //event.preventDefault();
+       // console.log(event.target.nodeName);
+       const LI_of_book=event.target.closest('li').getAttribute("name")
+        if(event.target.nodeName==="svg" || event.target.nodeName==="path"){
+            console.log("Delete "+LI_of_book);
+            Make.removeByName(LI_of_book);
+            Make.Set_Plagination();
+            console.log(Make.list)
+        }
+        else
+        console.log("Click on "+LI_of_book);
+    })
+
 })
