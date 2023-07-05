@@ -19,6 +19,7 @@ import arrSupport from './static-json-temporary/support_ukraine.json';
   
   };
   markUpSupportUkraine();
+  
   let offset=0;
   document.querySelector('.scroll').addEventListener('click',()=>{
       offset+= 150;

@@ -9,7 +9,6 @@
   border-radius: 16px;
   margin: 0 auto;
 }
-
 .slider_line{
   top: 0;
   height:188px;
@@ -77,8 +76,6 @@ margin-top: 16px;
 position: fixed;
 padding-left: 152px;
 }
-
-
 /* ================ Tablet ====================== */
 @media screen and (min-width: 768px) {
 
@@ -104,9 +101,6 @@ padding-left: 152px;
       line-height:1.28;
       letter-spacing:-4%;
       margin-top:40px;
-    
-
-
 }
 .scroll{
   padding-left: 149px;
@@ -125,6 +119,5 @@ padding-left: 152px;
   .position_support{
       padding-top: 86px;
   }
-
 }
 
