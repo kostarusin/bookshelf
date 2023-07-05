@@ -72,7 +72,7 @@ function setActiveCategory(category) {
 
   const arr = Array.from(categoryList);
 
-  arr.forEach((el, ind) => {
+  arr.find((el, ind) => {
     if (el.firstElementChild.textContent === category) {
       categoryList[ind].firstElementChild.classList.add('active-category');
     }
