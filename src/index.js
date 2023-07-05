@@ -11,5 +11,4 @@ import './js/scroll-up';
 import './js/categories';
 import './js/modal_mobile_menu';
 import './js/scroll-style';
-import './js/modal-authorization';
 
