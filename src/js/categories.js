@@ -1,7 +1,7 @@
 import BookApi from './services.js';
 import { renderTopBooks } from './render-top-books.js';
 import { receiveBookByCategory } from './category.js';
-import { toggleLoader } from './loader';
+import { toggleLoader } from './loading.js';
 
 const bookApi = new BookApi();
 
