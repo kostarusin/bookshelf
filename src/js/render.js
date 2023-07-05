@@ -4,7 +4,7 @@ import './test-modal-book';
 import { renderTopBooks } from './render-top-books.js';
 import { openModal } from './remote-modal';
 import { receiveBookByCategory } from './category.js';
-import { toggleLoader } from './loader';
+import { toggleLoader } from './loading';
 
 import BookApi from './services.js';
 
