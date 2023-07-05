@@ -4,7 +4,7 @@ import './test-modal-book';
 import { renderTopBooks } from './render-top-books.js';
 import { openModal } from './remote-modal';
 import { receiveBookByCategory } from './category.js';
-import { toggleLoader } from './loader';
+import { toggleLoader } from './loading';
 
 import BookApi from './services.js';
 
@@ -56,10 +56,25 @@ function openCategoryBooksBlock(category) {
       allBooksTitleEl.textContent = '';
       allBooksListEl.innerHTML = '';
 
+      setActiveCategory(category);
       receiveBookByCategory(data);
     })
     .catch(error => {
       console.log(error);
     })
     .finally(() => toggleLoader('add'));
+}
+
+function setActiveCategory(category) {
+  const categoryList = document.querySelector('.list-categories').children;
+
+  categoryList[0].firstElementChild.classList.remove('active-category');
+
+  const arr = Array.from(categoryList);
+
+  arr.find((el, ind) => {
+    if (el.firstElementChild.textContent === category) {
+      categoryList[ind].firstElementChild.classList.add('active-category');
+    }
+  });
 }

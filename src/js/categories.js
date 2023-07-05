@@ -1,12 +1,12 @@
 import BookApi from './services.js';
 import { renderTopBooks } from './render-top-books.js';
 import { receiveBookByCategory } from './category.js';
-import { toggleLoader } from './loader';
+import { toggleLoader } from './loading.js';
 
 const bookApi = new BookApi();
 
 const listCategoriesEl = document.querySelector('.list-categories');
-let activeCategoryEl = document.querySelector('.active-category');
+// let activeCategoryEl = document.querySelector('.active-category');
 
 const categoryBookList = document.querySelector('.category-books-list');
 const categoryTitle = document.querySelector('.category-books-title');
@@ -43,9 +43,11 @@ bookApi
 listCategoriesEl.addEventListener('click', event => {
   event.preventDefault();
 
+  let activeCategoryEl = document.querySelector('.active-category');
+
   if (event.target.nodeName === 'A') {
     const textCategory = event.target.textContent;
-    console.log(textCategory);
+    // console.log(textCategory);
     if (activeCategoryEl === event.target) {
       return;
     }
