@@ -1,9 +1,8 @@
 import arrSupport from './static-json-temporary/support_ukraine.json';
 
-
-  const divEl =document.querySelector('.slider_line');
+ const divEl =document.querySelector('.slider_line');
   const olEl=document.querySelector('.ol_support');
-  console.log(divEl,olEl)
+
   function markUpSupportUkraine(){
     let list = arrSupport.map(item => {
     let listItem = document.createElement('li');
@@ -11,43 +10,23 @@ import arrSupport from './static-json-temporary/support_ukraine.json';
     listItem.innerHTML = `
       <a class="support_link" target="_blank" href="${item.url}">
         <img class="image" src="${item.img}" alt="${item.title}"/>
-      </a>
-    `;
+      </a>`;
     return listItem;
   });
-  
   list.forEach(item=>{
   olEl.appendChild(item)
   });
   
   };
   markUpSupportUkraine();
+  
   let offset=0;
   document.querySelector('.scroll').addEventListener('click',()=>{
-      offset+= 96;
-      //document.querySelector('.scroll-up').classList.remove("visually-hidden") 
-      if(offset>288){
+      offset+= 150;
+      if(offset>300){
         offset=0;
-       //document.querySelector('.scroll').classList.add("visually-hidden")
-       //document.querySelector('.scroll-up').classList.remove("visually-hidden") 
-      }
+       }
         divEl.style.top= -offset+'px';
-        //document.querySelector('.scroll').classList.remove("visually-hidden")
-       //document.querySelector('.scroll-up').classList.add("visually-hidden") 
-      });
-    
-//     document.querySelector('.scroll-up').addEventListener('click',()=>{
-//    offset-= 96;
-//   //     //document.querySelector('.scroll').classList.add("visually-hidden") 
-  
-//    if(offset<=0 ){   
-//    offset=250 ; 
-     
-//   document.querySelector('.scroll-up').classList.add("visually-hidden"); 
-//   document.querySelector('.scroll').classList.remove("visually-hidden");
-//    }
-//  divEl.style.top= offset+'px';
-//      });
-    
-
+       });
+ 
  
