@@ -4,8 +4,7 @@
   justify-content: space-between;
   background-color: var(--header-background-color);
   border-radius: 0 0 8px 8px;
-  border-color: var(--header-border-color);
-  border: 1.5px solid;
+  border: 1.5px solid  var(--header-border-color);
   min-width: 320px;
 }
 .header-nav {
@@ -154,22 +153,25 @@
     background-color: var(--header-background-color);
     border-color: transparent;
     border-radius: 36px;
+    color: var(--font-color-dark);
   }
+
   .header-item:hover,
   .header-item:focus,
   .header-item:active {
+    font-weight: 700;
     background: #eac645;
+    color: var(--black-color);
+    fill: var(--black-color);
   }
 
   .header-nav-link {
     text-decoration: none;
-    font-weight: 700;
     font-size: 14px;
     line-height: calc(18 / 14);
     display: flex;
     align-items: center;
     letter-spacing: -0.56px;
-    color: var(--font-color-dark);
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     text-transform: uppercase;
     padding: 8px 16px;
@@ -177,29 +179,26 @@
 
   .header-to-link {
     text-decoration: none;
-    font-weight: 500;
     font-size: 14px;
     line-height: calc(18 / 14);
     display: flex;
     align-items: center;
     letter-spacing: -0.56px;
-    color: var(--font-color-dark);
     text-transform: uppercase;
     padding: 7px 16px;
   }
 
   .logo-head-icon {
-    stroke: var(--header-border-color);
-    fill: var(--support-ukraine-font-color);
-    padding-left: 4px;
+    /* stroke: var(--header-border-color); */
+    fill: currentColor;
+    margin-left: 8px;
   }
-  .logo-head-icon:hover,
-  .logo-head-icon:focus,
-  .logo-head-icon:active {
-    fill: #eac645;
-  }
+  
   .link-current {
+    font-weight: 700;
     background-color: #eac645;
+    color: var(--black-color);
+    fill: var(--black-color);
   }
 
   .header-team-user {

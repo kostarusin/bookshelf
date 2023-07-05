@@ -41,7 +41,43 @@
   fill: var(--font-color-selected);
 }
 
+.add-to-shopping-list-book-modal-btn {
+  padding: 14px 28px;
+  font-size: 14px;
+  line-height: 1.29;
+  font-weight: 700;
+  letter-spacing: -0.14px;
+  text-transform: uppercase;
+  color: #111;
+  background-color: transparent;
+  border-radius: 40px;
+  border: 2px solid #4f2ee8;
+}
+
 /* tablet,desktop */
+
+.see-more-books-btn {
+  padding: 14px 28px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.29;
+  letter-spacing: -0.14px;
+  text-transform: uppercase;
+  color: #111;
+  background-color: transparent;
+  border-radius: 40px;
+  border: 2px solid #4f2ee8;
+  transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+    background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+
+.see-more-books-btn:hover,
+.see-more-books-btn:focus {
+  color: #fff;
+  background-color: #4f2ee8;
+  box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.15);
+}
 
 .sign-up-modal-button {
   display: block;
@@ -68,6 +104,23 @@
 .sign-up-modal-close-btn-icon {
   width: 28px;
   height: 28px;
+}
+
+.add-to-shopping-list-book-modal-btn {
+  padding: 20px 173px;
+  font-size: 18px;
+  line-height: 1.33;
+  letter-spacing: -0.18px;
+  transition: color 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+    background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0s,
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+
+.add-to-shopping-list-book-modal-btn:hover,
+.add-to-shopping-list-book-modal-btn:focus {
+  color: #fff;
+  background-color: #4f2ee8;
+  box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.15);
 }
 
 /* Mobile-menu buttons */
