@@ -9,7 +9,6 @@ import './js/scroll-up';
 import './js/support_ukraine';
 import './js/scroll-up';
 import './js/categories';
-import './js/shopping-list';
 import './js/modal_mobile_menu';
 import './js/scroll-style';
 
