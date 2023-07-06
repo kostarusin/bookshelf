@@ -217,7 +217,7 @@ margin: auto;
 
 .tui-pagination {
     height: 28px;
-    margin: 14px 0 12px;
+    margin: 40px 0 40px;
     line-height: normal;
     text-align: center;
     font-size: 0;
@@ -228,7 +228,7 @@ margin: auto;
     position: relative;
     width: 28px;
     padding: 8px 0 6px;
-    margin-left: 0;
+    margin-left: 10px;
     color: #333;
     font-size: 12px;
     font-weight: normal;
