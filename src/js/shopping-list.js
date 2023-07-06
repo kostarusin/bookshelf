@@ -28,10 +28,10 @@ function GetShop(c, Shopname) {
 }
 function MakeHTML({
   book_image = '../images/logo.png',
-  title,
+  title="No title",
   list_name,
-  description,
-  author,
+  description="No description",
+  author="No author",
   buy_links,
   _id,
 }) {

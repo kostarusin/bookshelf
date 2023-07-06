@@ -187,10 +187,6 @@ display: flex;
 justify-content: center;
 align-items: center;
 /* background: red; */
-position: absolute;
-transform: translate(100%, -100%);
-top: 16px;
-right: 16px;
 display: block;
 margin: auto;
 }
@@ -201,8 +197,8 @@ margin: auto;
     right: 14px;
     background: var(--blue-color);
     border-radius: 50%;
-    width: 16px;
-    height: 16px;
+    width: 28px;
+    height: 28px;
 }
 /*  */
 
@@ -491,11 +487,13 @@ left: 164px;
     padding-bottom: 4px;
 
 font-weight: 700;
+max-width: none;
 
   }
 
   .shopping-list-books-item-category {
     font-weight: 400;
+    max-width: none;
   }
 
   .shopping-list-books-item-basic-info{
