@@ -3,21 +3,23 @@ import Pagination from 'tui-pagination';
 
 import { updateBookCounter } from './shop-list-book-counter';
 
-const bookApi = new BookApi();
+import { removeBook } from './storage';
+
+
+// const bookApi = new BookApi();
 const books = document.querySelector('.shopping-list-books');
-const categories = bookApi.getBookDetail('643282b1e85766588626a087');
 
 import amazonImg from '../images/marketplaces/amazon.png';
 import appleBooksImg from '../images/marketplaces/apple-books.png';
 import bookshopImg from '../images/marketplaces/bookspop.png';
-import Trash from '../images/sprite.svg#icon-modal-close-btn-black';
+import Trash from '../images/sprite.svg';
 
 updateBookCounter();
 
 function GetShop(c, Shopname) {
   const link = c;
-  for (element of c) {
-    if (element.name == Shopname) return element.url;
+  for (var element of c) {
+    if (element.name === Shopname) {return element.url;}
   }
 }
 function MakeHTML({
@@ -47,24 +49,24 @@ function MakeHTML({
           buy_links,
           'Amazon'
         )}" class="shopping-list-books-item-amazon-svg shopping-list-amazon">
-                <img width="32px" height="11px" src="${amazonImg}" loading="lazy" alt="amazon"></img>
+                <img src="${amazonImg}" loading="lazy" alt="amazon"></img>
         </a>
         <a href="${GetShop(
           buy_links,
           'Bookshop'
         )}" class="shopping-list-books-item-orange-book-svg">
-                <img src="${appleBooksImg}" width="16px" height="16px" loading="lazy" alt="apple Book"></img>
+                <img src="${appleBooksImg}" loading="lazy" alt="apple Book"></img>
         </a>
         <a href="${GetShop(
           buy_links,
           'IndieBound'
         )}" class="shopping-list-books-item-black-book-svg">
-                <img src="${bookshopImg}" width="16px" height="16px" loading="lazy" alt="book shop"></img>
+                <img src="${bookshopImg}" loading="lazy" alt="book shop"></img>
         </a>
         </div>
         <button class="shopping-list-books-item-delete-svg-button" type="button">
     <svg height="16px" class="shopping-list-delete-svg" width="16px">
-        <use href="${Trash}"/>
+        <use href="${Trash}#icon-trash"/>
     </svg>
     </button>
 </div>
@@ -79,7 +81,9 @@ export default class ShoppingListMake {
     this.page = 1;
     this.count_of_books = 4; // в других 3 в мобильном 4.
     this.pagination = new Pagination('pagination', {
-      // totalItems: y,
+       totalItems: parseInt(
+        Math.ceil(this.list.length / this.count_of_books)+1)
+      ,
       visiblePages: 2,
       itemsPerPage: 2,
       template: {
@@ -103,10 +107,10 @@ export default class ShoppingListMake {
   }
 
   Set_Plagination() {
-    this.pagination.totalItems = parseInt(
-      Math.ceil(this.list.length / this.count_of_books)
-    );
-    // console.log("It work"+ this.pagination.totalItems);
+    // this.pagination.totalItems = parseInt(
+    //   Math.ceil(this.list.length / this.count_of_books)
+    // );
+    console.log("It work"+ this.pagination.totalItems);
   }
   clearAll() {
     books.innerHTML = '';
@@ -144,38 +148,14 @@ export default class ShoppingListMake {
   }
 }
 
-var i;
-categories
-  .then(getd => (i = getd))
-  .finally(() => {
-    const Make = new ShoppingListMake([
-      i,
-      i,
-      i,
-      i,
-      i,
-      i,
-      i,
-      i,
-      i,
-      i,
-      i,
-      i,
-      i,
-      i,
-      i,
-      i,
-      i,
-      i,
-    ]);
+    const Make = new ShoppingListMake(JSON.parse(localStorage.getItem('shopping-list')));
     // Make.clearAll();
     // Make.SetPaginationPages();
-    Make.Set_Plagination();
+    // Make.Set_Plagination();
     Make.pagination.on('afterMove', function (eventData) {
       // alert('The current page is ' + eventData.page);
       Make.clearAll();
       Make.MakeToPage(eventData.page);
-      // console.log("DOIR")
     });
     Make.MakeToPage(1);
 
@@ -185,9 +165,9 @@ categories
       const LI_of_book = event.target.closest('li').getAttribute('name');
       if (event.target.nodeName === 'svg' || event.target.nodeName === 'path') {
         console.log('Delete ' + LI_of_book);
-        // Make.removeByName(LI_of_book);
+        //Make.removeByName(LI_of_book);
         // Make.Set_Plagination();
         // console.log(Make.list)
       } else console.log('Click on ' + LI_of_book);
     });
-  });
+
