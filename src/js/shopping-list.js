@@ -3,9 +3,11 @@ import Pagination from 'tui-pagination';
 
 import { updateBookCounter } from './shop-list-book-counter';
 
-const bookApi = new BookApi();
+import { removeBook } from './storage';
+
+
+// const bookApi = new BookApi();
 const books = document.querySelector('.shopping-list-books');
-const categories = bookApi.getBookDetail('643282b1e85766588626a087');
 
 import amazonImg from '../images/marketplaces/amazon.png';
 import appleBooksImg from '../images/marketplaces/apple-books.png';
@@ -144,30 +146,7 @@ export default class ShoppingListMake {
   }
 }
 
-var i;
-categories
-  .then(getd => (i = getd))
-  .finally(() => {
-    const Make = new ShoppingListMake([
-      i,
-      i,
-      i,
-      i,
-      i,
-      i,
-      i,
-      i,
-      i,
-      i,
-      i,
-      i,
-      i,
-      i,
-      i,
-      i,
-      i,
-      i,
-    ]);
+    const Make = new ShoppingListMake(JSON.parse(localStorage.getItem('shopping-list')));
     // Make.clearAll();
     // Make.SetPaginationPages();
     Make.Set_Plagination();
@@ -176,7 +155,6 @@ categories
       Make.clearAll();
       Make.MakeToPage(eventData.page);
     });
-    console.log(i)
     Make.MakeToPage(1);
 
     books.addEventListener('click', event => {
@@ -185,9 +163,9 @@ categories
       const LI_of_book = event.target.closest('li').getAttribute('name');
       if (event.target.nodeName === 'svg' || event.target.nodeName === 'path') {
         console.log('Delete ' + LI_of_book);
-        // Make.removeByName(LI_of_book);
+        //Make.removeByName(LI_of_book);
         // Make.Set_Plagination();
         // console.log(Make.list)
       } else console.log('Click on ' + LI_of_book);
     });
-  });
+
