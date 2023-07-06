@@ -10,6 +10,8 @@ const shoppingListname = new ShoppingList();
 
 // const bookApi = new BookApi();
 const books = document.querySelector('.shopping-list-books');
+const Block= document.querySelector('.shopping-list_no_books');
+const Plagination_get= document.querySelector('.tui-pagination');
 
 import amazonImg from '../images/marketplaces/amazon.png';
 import appleBooksImg from '../images/marketplaces/apple-books.png';
@@ -81,6 +83,12 @@ function MakeHTML({
 export default class ShoppingListMake {
   constructor(all) {
     this.list = all;
+    //console.log(all)
+    if (all.length<=0){
+      Block.classList.toggle("visually-hidden");
+      books.classList.toggle("visually-hidden");
+      Plagination_get.classList.toggle("visually-hidden");
+    }
     this.page = 1;
     this.count_of_books = 4; // в других 3 в мобильном 4.
     this.pagination = new Pagination('pagination', {
@@ -113,7 +121,7 @@ export default class ShoppingListMake {
     // this.pagination.totalItems = parseInt(
     //   Math.ceil(this.list.length / this.count_of_books)
     // );
-    console.log("It work"+ this.pagination.totalItems);
+    // console.log("It work"+ this.pagination.totalItems);
   }
   clearAll() {
     books.innerHTML = '';
@@ -164,14 +172,20 @@ export default class ShoppingListMake {
 
     books.addEventListener('click', event => {
       //event.preventDefault();
-       console.log(event.target.nodeName);
+      //  console.log(event.target.nodeName);
       const LI_of_book = event.target.closest('li').getAttribute('id') ;
       if (event.target.nodeName === 'use' || event.target.nodeName === 'BUTTON'|| event.target.nodeName === 'svg') {
-        console.log('Delete ' + LI_of_book);
-        console.log(event.target.closest('li'))
+        // console.log('Delete ' + LI_of_book);
+        // console.log(event.target.closest('li'))
         event.target.closest('li').remove();
         shoppingListname.removeBook(LI_of_book);
-        removeById(LI_of_book);
+        Make.removeById(LI_of_book);
+        // console.log(Make.list.length);
+        if (Make.list.length<=0){
+          Block.classList.toggle("visually-hidden");
+          books.classList.toggle("visually-hidden");
+          Plagination_get.classList.toggle("visually-hidden");
+        }
         // Make.Set_Plagination();
         // console.log(Make.list)
       } else console.log('Click on ' + LI_of_book);
