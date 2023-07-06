@@ -9,7 +9,7 @@
  }
 
  .backdropcolor {
-     background: var(--font-color-selected);
+     background: var(--blue-color);
      overflow: hidden;
      z-index: 1000;
  }
