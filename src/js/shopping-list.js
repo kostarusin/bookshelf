@@ -28,10 +28,10 @@ function GetShop(c, Shopname) {
 }
 function MakeHTML({
   book_image = '../images/logo.png',
-  title,
+  title="No title",
   list_name,
-  description,
-  author,
+  description="No description",
+  author="No author",
   buy_links,
   _id,
 }) {
@@ -138,13 +138,12 @@ export default class ShoppingListMake {
     books.insertAdjacentHTML('beforeend', Items);
   }
   removeById(id) {
-    this.list = this.list.filter((value, index, arr) => {
-      if (value._id === id) {
-        arr.splice(index, 1);
-        return true;
-      }
-      return false;
-    });
+
+    this.list.splice(
+      this.list.findIndex(book => {
+        return book._id === id;
+      }),
+      1);
   }
   MakeToPage(index) {
     this.page = index;
@@ -179,6 +178,9 @@ export default class ShoppingListMake {
         // console.log(event.target.closest('li'))
         event.target.closest('li').remove();
         shoppingListname.removeBook(LI_of_book);
+
+
+
         Make.removeById(LI_of_book);
         // console.log(Make.list.length);
         if (Make.list.length<=0){
@@ -186,6 +188,7 @@ export default class ShoppingListMake {
           books.classList.toggle("visually-hidden");
           Plagination_get.classList.toggle("visually-hidden");
         }
+        updateBookCounter();
         // Make.Set_Plagination();
         // console.log(Make.list)
       } else console.log('Click on ' + LI_of_book);
