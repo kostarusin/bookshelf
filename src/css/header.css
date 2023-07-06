@@ -265,13 +265,13 @@
 
 /* Book counter */
 
-.header-to-link {
+.header-nav-link {
   position: relative;
 }
 
 .header-book-count {
   position: absolute;
-  left: 125px;
+  right: 10px;
   top: 16px;
 
   z-index: 1;
