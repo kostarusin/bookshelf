@@ -94,7 +94,7 @@ font-size: 14px;
 font-family: DM Sans;
 font-style: normal;
 font-weight: 400;
-line-height: 18px;
+line-height: 0.77;
 letter-spacing: -0.56px;
 }
 .shopping-list-books-item-author{
@@ -409,7 +409,7 @@ font-family: DM Sans;
 font-size: 48px;
 font-style: normal;
 font-weight: 700;
-line-height: 52px;
+/* line-height: 52px; */
 letter-spacing: -1.92px;
 }
 
@@ -429,7 +429,7 @@ height: 165px;
 font-size: 12px;
 font-style: italic;
 font-weight: 400;
-line-height: 14px;
+/* line-height: 14px; */
 letter-spacing: -0.48px;
 
 bottom: 24px;
@@ -441,14 +441,8 @@ left: 164px;
 .shopping-list-books-item-header {
     padding-bottom: 4px;
 
-
-
-font-size: 16px;
-font-style: normal;
 font-weight: 700;
-line-height: 18px;
-letter-spacing: -0.64px;
-text-transform: uppercase;
+
   }
 
   .shopping-list-books-item-category {
@@ -506,5 +500,54 @@ height: 18px;
 position:static;
 transform:translate(0,0)
 }
+
 }
 
+
+@media screen and (min-width: 1440px) {
+.shopping-list-header{
+    padding-top: 40px;
+    padding-left: 0px;
+
+    font-weight: 700;
+}
+.shopping-list-books{
+    padding-top: 40;
+}
+.shopping-list-books-item-img-div{
+    width: 116px;
+    height: 165px;
+}
+.shopping-list-books-item-header{
+    padding-bottom: 4px;
+    font-weight: 700;
+}
+
+.shopping-list-books-item-category{
+    font-weight: 400;
+}
+.shopping-list-books-item-author{
+bottom: 24px;
+left: 164px;
+font-weight: 400;
+}
+.shopping-list-books-item{
+    width: 996px;
+height: 213px;
+}
+.shopping-list-books-item-delete-svg-button{
+width: 34px;
+height: 34px;
+
+}
+
+.shopping-list-books-item-description{
+width: 808px;
+height: 53px;
+}
+.shopping-list-books-item-description-stop-block{
+    width: 808px;
+    height: 53px;
+    font-weight: 400;  
+}
+}

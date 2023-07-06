@@ -81,7 +81,9 @@ export default class ShoppingListMake {
     this.page = 1;
     this.count_of_books = 4; // в других 3 в мобильном 4.
     this.pagination = new Pagination('pagination', {
-      // totalItems: y,
+       totalItems: parseInt(
+        Math.ceil(this.list.length / this.count_of_books)+1)
+      ,
       visiblePages: 2,
       itemsPerPage: 2,
       template: {
@@ -105,10 +107,10 @@ export default class ShoppingListMake {
   }
 
   Set_Plagination() {
-    this.pagination.totalItems = parseInt(
-      Math.ceil(this.list.length / this.count_of_books)
-    );
-    // console.log("It work"+ this.pagination.totalItems);
+    // this.pagination.totalItems = parseInt(
+    //   Math.ceil(this.list.length / this.count_of_books)
+    // );
+    console.log("It work"+ this.pagination.totalItems);
   }
   clearAll() {
     books.innerHTML = '';
@@ -149,7 +151,7 @@ export default class ShoppingListMake {
     const Make = new ShoppingListMake(JSON.parse(localStorage.getItem('shopping-list')));
     // Make.clearAll();
     // Make.SetPaginationPages();
-    Make.Set_Plagination();
+    // Make.Set_Plagination();
     Make.pagination.on('afterMove', function (eventData) {
       // alert('The current page is ' + eventData.page);
       Make.clearAll();
