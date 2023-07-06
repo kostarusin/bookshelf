@@ -16,8 +16,8 @@ updateBookCounter();
 
 function GetShop(c, Shopname) {
   const link = c;
-  for (element of c) {
-    if (element.name == Shopname) return element.url;
+  for (var element of c) {
+    if (element.name === Shopname) {return element.url;}
   }
 }
 function MakeHTML({
@@ -175,8 +175,8 @@ categories
       // alert('The current page is ' + eventData.page);
       Make.clearAll();
       Make.MakeToPage(eventData.page);
-      // console.log("DOIR")
     });
+    console.log(i)
     Make.MakeToPage(1);
 
     books.addEventListener('click', event => {
