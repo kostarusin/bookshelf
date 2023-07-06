@@ -292,3 +292,19 @@
 
   color: #111;
 }
+
+
+
+/* header position fixed; */
+#main-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: top 0.3s ease-in-out;
+
+
+}
+
+.main {
+  margin-top: 72px;
+}
