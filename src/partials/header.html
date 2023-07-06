@@ -10,20 +10,32 @@
         </svg>
       </a>
       <div class="site-nav-header">
-        <button class="link-current header-item">
+        <button class="header-item">
           <a href="./index.html" class="header-nav-link">HOME</a>
         </button>
         <button class="header-item">
-          <a href="./shopping.html" class="header-to-link"
+          <a href="./shopping.html" class="header-nav-link"
             >SHOPPING LIST
             <svg class="logo-head-icon" width="20" height="20">
               <use
-                href="/src/images/cart.svg#icon-cart"
+                href="/src/images/sprite.svg#icon-cart"
               ></use></svg
             ><span class="header-book-count"></span
           ></a>
         </button>
       </div>
+      <script>
+        const homeButton = document.querySelector('.header-item:nth-child(1)');
+        const shoppingButton = document.querySelector('.header-item:nth-child(2)');
+        
+        if (window.location.href.includes('shopping.html')) {
+          homeButton.classList.remove('link-current');
+          shoppingButton.classList.add('link-current');
+        } else {
+          shoppingButton.classList.remove('link-current');
+          homeButton.classList.add('link-current');
+        }
+      </script>
     </nav>
     <div class="header-cont-pre">
       <div class="header-team-user">
