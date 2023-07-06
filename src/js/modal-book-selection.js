@@ -2,32 +2,10 @@ import amazonImg from '../images/marketplaces/amazon.png';
 import appleBooksImg from '../images/marketplaces/apple-books.png';
 import bookshopImg from '../images/marketplaces/bookspop.png';
 
-// import ShoppingList from './storage';
-
 const modalContainer = document.querySelector('.modal-book-content-wrap');
-// const addToShoppingListBtn = modal.querySelector(
-//   '.modal-book-shopping-list-btn'
-// );
-// const modalMessage = modal.querySelector(
-//   '.modal-book-shopping-list-btn-shopping-list-message'
-// );
-
-// const shoppingList = new ShoppingList();
 
 export function renderModal(bookDetails) {
   const { book_image, title, author, description, buy_links } = bookDetails;
-
-  // const isBookAdded = shoppingList.findBook(_id);
-
-  // if (isBookAdded) {
-  //   addToShoppingListBtn.textContent = 'Remove from shopping list';
-  //   addToShoppingListBtn.dataset.isAdd = 'true';
-  //   modalMessage.classList.remove('message-hide');
-  // } else {
-  //   addToShoppingListBtn.textContent = 'Add to shopping list';
-  //   addToShoppingListBtn.dataset.isAdd = 'false';
-  //   modalMessage.classList.add('message-hide');
-  // }
 
   const markup = `
     <img
@@ -57,34 +35,6 @@ export function renderModal(bookDetails) {
 
   modalContainer.innerHTML = markup;
 }
-
-// const closeModal = () => {
-//   const backdrop = document.querySelector('.backdrop');
-//   const modal = document.querySelector('#modal');
-
-//   backdrop.classList.add('is-hidden');
-//   modal.classList.remove('is-visible');
-// };
-
-// const handleClickOutside = event => {
-//   const modal = document.querySelector('#modal');
-
-//   if (!modal.contains(event.target)) {
-//     closeModal();
-//   }
-// };
-
-// const handleEscapeKey = event => {
-//   if (event.key === 'Escape') {
-//     closeModal();
-//   }
-// };
-
-// const closeButton = document.querySelector('.close');
-// closeButton.addEventListener('click', closeModal);
-
-// document.addEventListener('click', handleClickOutside);
-// document.addEventListener('keydown', handleEscapeKey);
 
 function generateMarketplaceLinks(buy_links) {
   return buy_links
