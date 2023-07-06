@@ -145,7 +145,8 @@ position: absolute;
 transform: translate(100%, -100%);
 top: 16px;
 right: 16px;
-
+display: block;
+margin: auto;
 }
 .shopping-list-books-item-delete-svg-button{
     border: 0px;
@@ -379,3 +380,131 @@ right: 16px;
 .shopping-list-amazon{
 filter: var(--amazon-dark-color);
 }
+
+
+
+
+
+
+.shopping-list-books-item-amazon-svg{
+    width: 32px;
+    height: 11px;
+}
+.shopping-list-books-item-orange-book-svg{
+    width: 16px;
+    height: 16px;
+}
+.shopping-list-books-item-black-book-svg{
+    width: 16px;
+    height: 16px;
+}
+
+@media screen and (min-width: 768px) {
+.shopping-list-header{
+    padding-top: 40px;
+    padding-left: 32px;
+
+
+font-family: DM Sans;
+font-size: 48px;
+font-style: normal;
+font-weight: 700;
+line-height: 52px;
+letter-spacing: -1.92px;
+}
+
+.shopping-list-books{
+padding-top: 40;
+}
+.shopping-list-books-item{
+    width: 704px;
+    height: 213px;
+}
+.shopping-list-books-item-img-div{
+    width: 116px;
+height: 165px;
+}
+
+.shopping-list-books-item-author{
+font-size: 12px;
+font-style: italic;
+font-weight: 400;
+line-height: 14px;
+letter-spacing: -0.48px;
+
+bottom: 24px;
+left: 164px;
+}
+
+
+
+.shopping-list-books-item-header {
+    padding-bottom: 4px;
+
+
+
+font-size: 16px;
+font-style: normal;
+font-weight: 700;
+line-height: 18px;
+letter-spacing: -0.64px;
+text-transform: uppercase;
+  }
+
+  .shopping-list-books-item-category {
+    font-weight: 400;
+  }
+
+  .shopping-list-books-item-basic-info{
+    padding-bottom: 14px;
+  }
+  
+
+  .shopping-list-books-item-description{
+    width: 508px;
+height: 53px;
+font-weight: 400;
+  }
+
+  .shopping-list-books-item-description-stop-block{
+    width: 508px;
+height: 53px;
+  }
+
+
+
+
+  .shopping-list-books-item-amazon-svg{
+    width: 48px;
+    height: 15px;
+}
+.shopping-list-books-item-orange-book-svg{
+    width: 28px;
+    height: 27px;
+}
+.shopping-list-books-item-black-book-svg{
+    width: 32px;
+    height: 30px;
+}
+
+.shopping-list-books-item-shops{
+    bottom: 14px;
+right: 14px;
+gap: 16px;
+}
+
+.shopping-list-books-item-delete-svg-button{
+    top: 24px;
+right: 24px;
+width: 34px;
+height: 34px;
+}
+
+.shopping-list-delete-svg{
+width: 18px;
+height: 18px;
+position:static;
+transform:translate(0,0)
+}
+}
+

@@ -12,7 +12,7 @@ const books = document.querySelector('.shopping-list-books');
 import amazonImg from '../images/marketplaces/amazon.png';
 import appleBooksImg from '../images/marketplaces/apple-books.png';
 import bookshopImg from '../images/marketplaces/bookspop.png';
-import Trash from '../images/sprite.svg#icon-modal-close-btn-black';
+import Trash from '../images/sprite.svg';
 
 updateBookCounter();
 
@@ -49,24 +49,24 @@ function MakeHTML({
           buy_links,
           'Amazon'
         )}" class="shopping-list-books-item-amazon-svg shopping-list-amazon">
-                <img width="32px" height="11px" src="${amazonImg}" loading="lazy" alt="amazon"></img>
+                <img src="${amazonImg}" loading="lazy" alt="amazon"></img>
         </a>
         <a href="${GetShop(
           buy_links,
           'Bookshop'
         )}" class="shopping-list-books-item-orange-book-svg">
-                <img src="${appleBooksImg}" width="16px" height="16px" loading="lazy" alt="apple Book"></img>
+                <img src="${appleBooksImg}" loading="lazy" alt="apple Book"></img>
         </a>
         <a href="${GetShop(
           buy_links,
           'IndieBound'
         )}" class="shopping-list-books-item-black-book-svg">
-                <img src="${bookshopImg}" width="16px" height="16px" loading="lazy" alt="book shop"></img>
+                <img src="${bookshopImg}" loading="lazy" alt="book shop"></img>
         </a>
         </div>
         <button class="shopping-list-books-item-delete-svg-button" type="button">
     <svg height="16px" class="shopping-list-delete-svg" width="16px">
-        <use href="${Trash}"/>
+        <use href="${Trash}#icon-trash"/>
     </svg>
     </button>
 </div>
