@@ -129,9 +129,9 @@ export default class ShoppingListMake {
       .join('');
     books.insertAdjacentHTML('beforeend', Items);
   }
-  removeByName(name) {
+  removeById(id) {
     this.list = this.list.filter((value, index, arr) => {
-      if (value.title === name) {
+      if (value._id === id) {
         arr.splice(index, 1);
         return true;
       }
@@ -171,6 +171,7 @@ export default class ShoppingListMake {
         console.log(event.target.closest('li'))
         event.target.closest('li').remove();
         shoppingListname.removeBook(LI_of_book);
+        removeById(LI_of_book);
         // Make.Set_Plagination();
         // console.log(Make.list)
       } else console.log('Click on ' + LI_of_book);
