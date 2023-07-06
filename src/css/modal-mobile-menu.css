@@ -65,7 +65,7 @@
 }
 
 .box-menu-btn-sign-up {
-  margin-top: 104px;
+  margin-top: 54px;
 }
 
 .box-menu-user {
@@ -135,7 +135,6 @@
 
 .mobile-menu-list {
   position: absolute;
-  top: 183px;
   left: 50%;
   transform: translateX(-50%);
 }
