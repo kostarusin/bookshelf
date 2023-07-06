@@ -12,3 +12,4 @@ import './js/categories';
 import './js/modal_mobile_menu';
 import './js/scroll-style';
 import './js/shop-list-book-counter';
+import './js/modal-authorization';
