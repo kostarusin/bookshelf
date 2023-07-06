@@ -104,9 +104,7 @@
   .head-icon-close {
     width: 28px;
     height: 28px;
-    /* display: flex; */
     align-items: center;
-    /* justify-content: center; */
     background-color: transparent;
     stroke: var(--header-border-color);
     fill: var(--header-border-color);
@@ -301,8 +299,6 @@
   top: 0;
   width: 100%;
   transition: top 0.3s ease-in-out;
-
-
 }
 
 .main {

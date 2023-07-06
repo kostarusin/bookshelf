@@ -228,52 +228,66 @@ margin: auto;
     position: relative;
     width: 28px;
     padding: 8px 0 6px;
+
     margin-left: 10px;
-    color: #333;
+    
+
+
+    color: var(--font-color-dark);
     font-size: 12px;
     font-weight: normal;
     line-height: 1;
     text-decoration: none;
     vertical-align: middle;
-    border: 1px solid #ddd;
+    border: 1px solid;
     border-width: 1px 0;
     
     border-radius: 50%;
 }
 
 .tui-pagination .tui-page-btn:hover {
-    background-color: #f4f4f4;
+    background-color: var(--white-color);
+    color: var(--black-color);
 }
 
 .tui-pagination .tui-is-selected, .tui-pagination strong {
-    color: #fff;
-    background: #111;
-    border-color: #111;
+    color: var(--header-background-color);
+    background: var(--font-color-dark);
+    border-color: var(--black-color);
     cursor: default;
 }
 
 .tui-pagination .tui-is-selected:hover {
-    background-color: #111;
+    background-color: var(--font-color-dark);
+    color: var(--header-background-color);
 }
 
 .tui-pagination .tui-first-child.tui-is-selected, .tui-pagination strong.tui-first-child {
-    margin-left: 0
+    margin-left: 0;
 }
 
 .tui-pagination .tui-first-child, .tui-pagination .tui-prev-is-ellip {
-    border-left: 1px solid #ddd
+    border-left: 1px solid var(--font-color-dark);
+}
+
+.tui-pagination .tui-first-child:is(:hover, :focus), .tui-pagination .tui-prev-is-ellip:is(:hover, :focus) {
+    border-left: 1px solid var(--black-color);
 }
 
 .tui-pagination .tui-last-child, .tui-pagination .tui-next-is-ellip {
-    border-right: 1px solid #ddd
+    border-right: 1px solid var(--font-color-dark);
+}
+
+.tui-pagination .tui-last-child:is(:hover, :focus), .tui-pagination .tui-next-is-ellip:is(:hover, :focus) {
+    border-right: 1px solid var(--black-color);
 }
 
 .tui-pagination .tui-first-child.tui-is-selected {
-    border-left: 1px solid #111
+    border-left: 1px solid var(--black-color);
 }
 
 .tui-pagination .tui-last-child.tui-is-selected {
-    border-right: 1px solid #111
+    border-right: 1px solid var(--black-color);
 }
 
 .tui-pagination .tui-first, .tui-pagination .tui-prev, .tui-pagination .tui-next, .tui-pagination .tui-last, .tui-pagination .tui-prev-is-ellip, .tui-pagination .tui-next-is-ellip {
@@ -284,19 +298,23 @@ margin: auto;
     line-height: 26px;
     white-space: nowrap;
     font-weight: normal;
-    border: 1px solid #ddd;
 }
 
+.tui-pagination .tui-first, .tui-pagination .tui-prev, .tui-pagination .tui-next, .tui-pagination .tui-last {
+    border: 1px solid var(--black-color);
+}
+
+
 .tui-pagination .tui-prev-is-ellip {
-    border-right: 0
+    border-right: 0;
 }
 
 .tui-pagination .tui-next-is-ellip {
-    border-left: 0
+    border-left: 0;
 }
 
 .tui-pagination .tui-first+.tui-prev, .tui-pagination .tui-next+.tui-last {
-    border-left: 0
+    border-left: 0;
 }
 
 .tui-pagination .tui-ico-first, .tui-pagination .tui-ico-prev, .tui-pagination .tui-ico-next, .tui-pagination .tui-ico-last, .tui-pagination .tui-ico-ellip {
@@ -352,11 +370,12 @@ margin: auto;
 }
 
 .tui-pagination .tui-is-disabled:hover {
-    background: #111;
+    background: var(--black-color);
     cursor: default
 }
+
 .tui-pagination .tui-is-disabled {
-    background: #111;
+    background: var(--black-color);
     cursor: default
 }
 
@@ -393,9 +412,9 @@ margin: auto;
     outline: none;
 }
 
-.tui-page-inputs .tui-page-current {
-    color: #111
-}
+/* .tui-page-inputs .tui-page-current {
+    color: #111;
+} */
 
 .tui-page-separator {
     display: inline-block;
@@ -405,17 +424,22 @@ margin: auto;
     vertical-align: top
 }
 .tui-next{
-    background-color: #EAC645;
+    background-color: var(--pagination-orange-color);
+    border-color: var(--font-color-dark);
+
 }
 .tui-last{
-    background-color: #EAC645;
+    background-color: var(--pagination-orange-color);
+    border-color: var(--font-color-dark);
 }
 
 .tui-first{
-    background-color: #EAC645;
+    background-color: var(--pagination-orange-color);
+    border-color: var(--font-color-dark);
 }
 .tui-prev{
-    background-color: #EAC645;
+    background-color: var(--pagination-orange-color);
+    border-color: var(--font-color-dark);
 }
 
 
