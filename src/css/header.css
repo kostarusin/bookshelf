@@ -4,7 +4,7 @@
   justify-content: space-between;
   background-color: var(--header-background-color);
   border-radius: 0 0 8px 8px;
-  border: 1.5px solid  var(--header-border-color);
+  border: 1.5px solid var(--header-border-color);
   min-width: 320px;
 }
 .header-nav {
@@ -193,7 +193,7 @@
     fill: currentColor;
     margin-left: 8px;
   }
-  
+
   .link-current {
     font-weight: 700;
     background-color: #eac645;
@@ -287,8 +287,8 @@
 
 .header-book-count {
   position: absolute;
-  left: 118px;
-  top: 18px;
+  left: 125px;
+  top: 16px;
 
   z-index: 1;
   display: flex;
@@ -301,7 +301,7 @@
   background: #eac645;
 
   text-align: center;
-  font-size: 7px;
+  font-size: 8px;
   font-weight: 700;
   line-height: 6px;
   letter-spacing: -0.24px;
