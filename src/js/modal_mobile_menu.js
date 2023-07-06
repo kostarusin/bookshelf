@@ -2,7 +2,7 @@ const menuBtnEl = document.querySelector('.header-burger');
 const menuBoxEl = document.querySelector('.js-box-menu');
 const bodyEl = document.body;
 const iconBurgerMenuEl = menuBtnEl.querySelector('.icon-burger-menu');
-const iconCloseEl = menuBtnEl.querySelector('.back-to-shoping-list-btn-icon');
+const iconCloseEl = menuBtnEl.querySelector('.head-icon-close');
 
 menuBtnEl.addEventListener('click', onClickMenuBtn);
 
