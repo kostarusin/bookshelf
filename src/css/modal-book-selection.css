@@ -250,7 +250,7 @@
    display: flex;
    justify-content: center;
    align-items: center;
-   padding: 14px 28px;
+   padding: 14px 23px;   
    border-radius: 40px;
    border: 2px solid var(--blue-color);
    background-color: transparent;
@@ -266,6 +266,7 @@
    .modal-book-shopping-list-btn {
       font-size: 18px;
       width: 499px;
+      padding: 14px 28px;
       line-height: 1.33;      
       letter-spacing: -0.18px;
    }
