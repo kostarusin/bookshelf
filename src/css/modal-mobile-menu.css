@@ -1,17 +1,26 @@
+@media (max-width: 767px) {
+  .box-menu {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .box-menu {
+    display: none;
+  }
+}
+
 .box-menu {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 375px;
   width: 100%;
-  min-height: 100vh;
-  height: 100%;
+  height: calc(100vh - 60px);
   z-index: 10;
   background: url('../images/Group-of-books@1x.png'),
-    radial-gradient(
-      189.32% 190.93% at 59.76% -23.42%,
-      #4f2ee8 18.03%,
-      #fff 100%
-    );
+    radial-gradient(189.32% 190.93% at 59.76% -23.42%, #4f2ee8 18.03%, #fff 100%);
   background-repeat: no-repeat;
   background-position-y: bottom;
   background-size: contain;
@@ -20,9 +29,11 @@
   transition: opacity 1s;
 }
 
-.box-menu .container {
-  height: 100%;
+.box-menu.show {
+  opacity: 1;
+  pointer-events: all;
 }
+
 
 .box-menu .box-menu-user {
   height: calc(100% - 84px);
@@ -32,6 +43,7 @@
   opacity: 1;
   pointer-events: all;
 }
+
 
 .no-scroll {
   overflow: hidden;
