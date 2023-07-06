@@ -14,7 +14,7 @@ line-height: 0.8421052%;
 letter-spacing: -1.28px;
 }
 .shopping-list-second-header{
-    color: var(--font-color-selected);
+    color: var(--blue-color);
 }
 
 .shopping-list-books{
@@ -152,7 +152,7 @@ right: 16px;
     position: absolute;
     top: 14px;
     right: 14px;
-    background: var(--font-color-selected);
+    background: var(--blue-color);
     border-radius: 50%;
     width: 16px;
     height: 16px;
