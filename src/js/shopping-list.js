@@ -18,7 +18,7 @@ import appleBooksImg from '../images/marketplaces/apple-books.png';
 import bookshopImg from '../images/marketplaces/bookspop.png';
 import Trash from '../images/sprite.svg';
 
-updateBookCounter();
+updateBookCounter(); 
 
 function GetShop(c, Shopname) {
   const link = c;
