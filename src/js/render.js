@@ -1,5 +1,4 @@
 import './test-modal-book';
-// import './test-render-all-books';
 
 import { renderTopBooks } from './render-top-books.js';
 import { openModal } from './remote-modal';
