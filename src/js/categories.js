@@ -17,8 +17,6 @@ const categoryBooksWrapperEl = document.querySelector(
   '.category-books-wrapper'
 );
 
-toggleLoader();
-
 bookApi
   .getCategories()
   .then(categories => {
@@ -37,8 +35,7 @@ bookApi
   })
   .catch(error => {
     console.log(error);
-  })
-  .finally(() => toggleLoader('add'));
+  });
 
 listCategoriesEl.addEventListener('click', event => {
   event.preventDefault();

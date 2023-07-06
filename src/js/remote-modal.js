@@ -1,4 +1,5 @@
 import { renderModal } from './modal-book-selection';
+import { updateBookCounter } from './shop-list-book-counter';
 import BookApi from './services.js';
 import ShoppingList from './storage';
 
@@ -88,13 +89,15 @@ function remoteShoppingList(book) {
       modalMessage.classList.add('message-hide');
     }
 
-    return;
+    // return;
   } else {
     shoppingList.setBook(book);
     addToShoppingListBtn.textContent = 'remove from the shopping list';
     addToShoppingListBtn.dataset.isAdd = 'true';
     modalMessage.classList.remove('message-hide');
   }
+
+  updateBookCounter();
 }
 
 // Body scroll lock function
