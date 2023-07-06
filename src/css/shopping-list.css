@@ -488,12 +488,13 @@ left: 164px;
 
 font-weight: 700;
 max-width: none;
-
+white-space: normal;
   }
 
   .shopping-list-books-item-category {
     font-weight: 400;
     max-width: none;
+    white-space:normal;
   }
 
   .shopping-list-books-item-basic-info{
